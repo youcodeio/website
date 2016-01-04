@@ -56,7 +56,48 @@
     <!-- Handling views with Done Js Router -->
     <!--<div ui-view></div> this is AngularJS router-->
     <main>
-      <h1>{{message}}</h1>
+      <can-import from="youcode-website/home/">
+        {{#if isPending}}
+          Loading...
+        {{else}}
+          <header-home/>
+        {{/if}}
+      </can-import>
+      <can-import from="youcode-website/home/welcome/">
+        {{#if isPending}}
+          Loading...
+        {{else}}
+          <welcome-home/>
+        {{/if}}
+      </can-import>
+      <can-import from="youcode-website/home/search/">
+        {{#if isPending}}
+          Loading...
+        {{else}}
+          <search-home/>
+        {{/if}}
+      </can-import>
+      <can-import from="youcode-website/about/">
+        {{#if isPending}}
+          Loading...
+        {{else}}
+          <about-page/>
+        {{/if}}
+      </can-import>
+      <can-import from="youcode-website/conferences/">
+        {{#if isPending}}
+          Loading...
+        {{else}}
+          <conferences-page/>
+        {{/if}}
+      </can-import>
+      <can-import from="youcode-website/channels/">
+        {{#if isPending}}
+          Loading...
+        {{else}}
+          <channels-page/>
+        {{/if}}
+      </can-import>
     </main>
     
     <!-- Footer -->
