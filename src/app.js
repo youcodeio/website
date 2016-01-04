@@ -16,4 +16,6 @@ const AppViewModel = AppMap.extend({
   }
 });
 
+route('/:page', { page: 'home' });
+
 export default AppViewModel;

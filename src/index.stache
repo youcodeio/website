@@ -39,16 +39,16 @@
         </a>
         <a href="#" data-activates="mobile-demo" class="button-collapse "><i class="mdi-navigation-menu white-text"></i></a>
         <ul class="right hide-on-med-and-down">
-          <li><a href="#/" class="waves-effect waves-light">Home</a></li>
-          <li><a href="#about" class="waves-effect waves-light">About</a></li>
-          <li><a href="#/conferences" class="waves-effect waves-light">Conferences</a></li>
-          <li><a href="#/channels" class="waves-effect waves-light">Channels</a></li>
+          <li><a href="{{routeUrl page='home' }}" class="waves-effect waves-light">Home</a></li>
+          <li><a href="{{routeUrl page='about' }}" class="waves-effect waves-light">About</a></li>
+          <li><a href="{{routeUrl page='conferences' }}" class="waves-effect waves-light">Conferences</a></li>
+          <li><a href="{{routeUrl page='channels' }}" class="waves-effect waves-light">Channels</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
-          <li><a href="#/" class="waves-effect waves-light width_link_on_mobile">Home</a></li>
-          <li><a href="#about" class="waves-effect waves-light width_link_on_mobile">About</a></li>
-          <li><a href="#/conferences" class="waves-effect waves-light width_link_on_mobile">Conferences</a></li>
-          <li><a href="#/channels" class="waves-effect waves-light width_link_on_mobile">Channels</a></li>
+          <li><a href="{{routeUrl page='home' }}" class="waves-effect waves-light width_link_on_mobile">Home</a></li>
+          <li><a href="{{routeUrl page='about' }}" class="waves-effect waves-light width_link_on_mobile">About</a></li>
+          <li><a href="{{routeUrl page='conferences' }}" class="waves-effect waves-light width_link_on_mobile">Conferences</a></li>
+          <li><a href="{{routeUrl page='channels' }}" class="waves-effect waves-light width_link_on_mobile">Channels</a></li>
         </ul>
       </div>
     </nav>
@@ -56,6 +56,34 @@
     <!-- Handling views with Done Js Router -->
     <!--<div ui-view></div> this is AngularJS router-->
     <main>
+    {{#eq page 'about'}}
+      <can-import from="youcode-website/about/">
+        {{#if isPending}}
+          Loading...
+        {{else}}
+          <about-page/>
+        {{/if}}
+      </can-import>
+    {{/eq}}
+    {{#eq page 'conferences'}}
+      <can-import from="youcode-website/conferences/">
+        {{#if isPending}}
+          Loading...
+        {{else}}
+          <conferences-page/>
+        {{/if}}
+      </can-import>
+    {{/eq}}
+    {{#eq page 'channels'}}
+      <can-import from="youcode-website/channels/">
+        {{#if isPending}}
+          Loading...
+        {{else}}
+          <channels-page/>
+        {{/if}}
+      </can-import>
+    {{/eq}}
+    {{#eq page 'home'}}
       <can-import from="youcode-website/home/">
         {{#if isPending}}
           Loading...
@@ -77,27 +105,7 @@
           <search-home/>
         {{/if}}
       </can-import>
-      <can-import from="youcode-website/about/">
-        {{#if isPending}}
-          Loading...
-        {{else}}
-          <about-page/>
-        {{/if}}
-      </can-import>
-      <can-import from="youcode-website/conferences/">
-        {{#if isPending}}
-          Loading...
-        {{else}}
-          <conferences-page/>
-        {{/if}}
-      </can-import>
-      <can-import from="youcode-website/channels/">
-        {{#if isPending}}
-          Loading...
-        {{else}}
-          <channels-page/>
-        {{/if}}
-      </can-import>
+    {{/eq}}
     </main>
     
     <!-- Footer -->
