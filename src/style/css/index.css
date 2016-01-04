@@ -34,20 +34,6 @@
   -ms-animation: fadeInUp 1.5s;
 }
 
-.width_link_on_mobile {
-    width: 100%;
-}
-
-body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
-
-.main {
-    flex: 1 0 auto;
-}
-
 /******************************************************************
                         NAVBAR
 ******************************************************************/

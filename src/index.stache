@@ -45,10 +45,10 @@
           <li><a href="#/channels" class="waves-effect waves-light">Channels</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
-          <li><a href="#/" class="waves-effect waves-light">Home</a></li>
-          <li><a href="#about" class="waves-effect waves-light">About</a></li>
-          <li><a href="#/conferences" class="waves-effect waves-light">Conferences</a></li>
-          <li><a href="#/channels" class="waves-effect waves-light">Channels</a></li>
+          <li><a href="#/" class="waves-effect waves-light width_link_on_mobile">Home</a></li>
+          <li><a href="#about" class="waves-effect waves-light width_link_on_mobile">About</a></li>
+          <li><a href="#/conferences" class="waves-effect waves-light width_link_on_mobile">Conferences</a></li>
+          <li><a href="#/channels" class="waves-effect waves-light width_link_on_mobile">Channels</a></li>
         </ul>
       </div>
     </nav>
@@ -98,9 +98,10 @@
   {{/switch}}
 
   <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="src/lib/jquery.min.js"></script>
   <script type="text/javascript" src="src/lib/vendor/modernizr-2.8.3.min.js"></script>
   
-  <script type="text/javascript" src="src/lib/index.js"></script>
+  <script type="text/javascript" src="src/view/index.js"></script>
 
   <script type="text/javascript" src="src/lib/moment.js"></script>
   <script type="text/javascript" src="src/lib/plugins.js"></script>
