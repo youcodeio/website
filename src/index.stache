@@ -8,8 +8,9 @@
     <!-- Place favicon.ico in the root directory -->
 
     <link type="text/css" rel="stylesheet" href="src/style/css/animate.css">
-    <link type="text/css" rel="stylesheet" href="src/style/css/index.css">
     <link type="text/css" rel="stylesheet" href="src/style/css/main.css">
+
+    <link type="text/css" rel="stylesheet" href="src/style/css/index.css">
 
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="src/style/css/materialize.css"  media="screen,projection"/>
@@ -18,7 +19,7 @@
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 
-    <link type="text/css" rel="stylesheet" href="src/style/material-icon/material-icon" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="src/style/material-icon/material-icon.css" rel="stylesheet">
 
   </head>
   <body>
@@ -34,10 +35,10 @@
     <!-- Navigation bar -->
     <nav>
       <div class="nav-wrapper red">
-        <a href="#/" class="brand-logo waves-effect waves-light">
-        <img src="src/img/youcode_logo.svg" alt="Logo YouCode" class="index_youcodeLogo">
+        <a href="#!" class="brand-logo waves-effect waves-light">
+          <img src="src/img/youcode_logo.svg" alt="Logo YouCode" class="index_youcodeLogo">
         </a>
-        <a href="#" data-activates="mobile-demo" class="button-collapse "><i class="mdi-navigation-menu white-text"></i></a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
           <li><a href="{{routeUrl page='home' }}" class="waves-effect waves-light">Home</a></li>
           <li><a href="{{routeUrl page='about' }}" class="waves-effect waves-light">About</a></li>
@@ -56,34 +57,8 @@
     <!-- Handling views with Done Js Router -->
     <!--<div ui-view></div> this is AngularJS router-->
     <main>
-    {{#eq page 'about'}}
-      <can-import from="youcode-website/about/">
-        {{#if isPending}}
-          Loading...
-        {{else}}
-          <about-page/>
-        {{/if}}
-      </can-import>
-    {{/eq}}
-    {{#eq page 'conferences'}}
-      <can-import from="youcode-website/conferences/">
-        {{#if isPending}}
-          Loading...
-        {{else}}
-          <conferences-page/>
-        {{/if}}
-      </can-import>
-    {{/eq}}
-    {{#eq page 'channels'}}
-      <can-import from="youcode-website/channels/">
-        {{#if isPending}}
-          Loading...
-        {{else}}
-          <channels-page/>
-        {{/if}}
-      </can-import>
-    {{/eq}}
-    {{#eq page 'home'}}
+    {{#switch page}}
+      {{#case "home"}}
       <can-import from="youcode-website/home/">
         {{#if isPending}}
           Loading...
@@ -105,7 +80,35 @@
           <search-home/>
         {{/if}}
       </can-import>
-    {{/eq}}
+      {{/case}}
+      {{#case 'about'}}
+      <can-import from="youcode-website/about/">
+        {{#if isPending}}
+          Loading...
+        {{else}}
+          <about-page/>
+        {{/if}}
+      </can-import>
+      {{/case}}
+      {{#case 'conferences'}}
+      <can-import from="youcode-website/conferences/">
+        {{#if isPending}}
+          Loading...
+        {{else}}
+          <conferences-page/>
+        {{/if}}
+      </can-import>
+      {{/case}}
+      {{#case 'channels'}}
+      <can-import from="youcode-website/channels/">
+        {{#if isPending}}
+          Loading...
+        {{else}}
+          <channels-page/>
+        {{/if}}
+      </can-import>
+      {{/case}}
+    {{/switch}}
     </main>
     
     <!-- Footer -->
@@ -150,9 +153,9 @@
   <script type="text/javascript" src="src/lib/jquery.min.js"></script>
   <script type="text/javascript" src="src/lib/vendor/modernizr-2.8.3.min.js"></script>
   
-  <script type="text/javascript" src="src/view/index.js"></script>
-
   <script type="text/javascript" src="src/lib/moment.js"></script>
   <script type="text/javascript" src="src/lib/plugins.js"></script>
   <script type="text/javascript" src="src/lib/materialize.min.js"></script>
+
+  <script type="text/javascript" src="src/view/index.js"></script>
 </html>
