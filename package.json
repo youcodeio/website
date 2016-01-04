@@ -1,0 +1,61 @@
+{
+  "name": "youcode-website",
+  "version": "0.0.0",
+  "description": "Repo for youcode.io V2.0. Website with DoneJs.",
+  "homepage": "",
+  "author": {
+    "name": "youcodeio",
+    "email": "",
+    "url": ""
+  },
+  "scripts": {
+    "test": "testee src/test.html --browsers firefox --reporter Spec",
+    "start": "can-serve --port 8080",
+    "develop": "can-serve --develop --port 8080",
+    "document": "documentjs",
+    "build": "node build"
+  },
+  "main": "youcode-website/index.stache!done-autorender",
+  "files": [
+    "src"
+  ],
+  "keywords": [],
+  "system": {
+    "main": "youcode-website/index.stache!done-autorender",
+    "directories": {
+      "lib": "src"
+    },
+    "configDependencies": [
+      "live-reload"
+    ],
+    "npmIgnore": [
+      "documentjs",
+      "testee",
+      "donejs-deploy",
+      "generator-donejs",
+      "donejs-cli"
+    ],
+    "npmAlgorithm": "flat"
+  },
+  "dependencies": {
+    "can": "^2.3.7",
+    "can-connect": "^0.3.3",
+    "can-ssr": "^0.10.1",
+    "done-autorender": "^0.5.0",
+    "done-component": "^0.3.1",
+    "done-css": "^1.1.15",
+    "generator-donejs": "^0.3.5",
+    "jquery": "^2.1.4",
+    "steal": "^0.12.9"
+  },
+  "devDependencies": {
+    "can-fixture": "^0.1.1",
+    "documentjs": "^0.3.3",
+    "donejs-cli": "^0.5.9",
+    "donejs-deploy": "^0.3.1",
+    "funcunit": "^3.0.0",
+    "steal-qunit": "^0.1.1",
+    "steal-tools": "^0.12.4",
+    "testee": "^0.2.3"
+  }
+}
