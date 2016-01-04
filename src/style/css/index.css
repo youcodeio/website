@@ -1,0 +1,104 @@
+/*
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+                        INDEX.HTML
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+*/
+/*CSS Youcode pour le fichier index.html*/
+.index_youcodeLogo{
+    height: 60px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.index_construction{
+    font-size: 5em;
+    text-align: center;
+    font-weight: 100;
+}
+
+/*Toast pour informer que nous sommes encore en dev et en Beta*/
+.toast_beta{
+    font-weight: bold;
+    padding-left: 5px;
+}
+
+/*Animation of search.html and welcome.html content */
+.index_swag { 
+  -webkit-animation: fadeInUp 1.5s;
+  -moz-animation: fadeInUp 1.5s;
+  -o-animation: fadeInUp 1.5s;
+  -ms-animation: fadeInUp 1.5s;
+}
+
+.width_link_on_mobile {
+    width: 100%;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+.main {
+    flex: 1 0 auto;
+}
+
+/******************************************************************
+                        NAVBAR
+******************************************************************/
+
+.icon_style {
+    width: 100%;
+    text-align: center;
+}
+
+/******************************************************************
+                        LEVEL 1
+******************************************************************/
+.header_flou{
+    z-index: -1;
+    background-image: url(background/flou.png);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+    width: 100%;
+    height: 540px;
+}
+
+.title_name {
+    margin-top: 200px;
+    background-image: url(../img/name_full_hd.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    font-size: 4em;
+    font-weight: 100;
+    width: 100%;
+    height: 80px;
+}
+
+.scroll_text {
+    margin-top: 80px;
+    text-align: center;
+}
+
+.rotate_icon {
+    -ms-transform: rotate(180deg); /* IE 9 */
+    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+    transform: rotate(180deg);
+}
+
+
+
+
+
+
+
+
+
+

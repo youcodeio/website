@@ -6,11 +6,11 @@ import 'can/route/pushstate/';
 const AppViewModel = AppMap.extend({
   define: {
     message: {
-      value: 'Hello World!',
+      value: 'Youcode Website!',
       serialize: false
     },
     title: {
-      value: 'youcode-website',
+      value: 'YouCode: A plateform for developers to find talks and tutorials',
       serialize: false
     }
   }
