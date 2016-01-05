@@ -53,7 +53,7 @@
         </ul>
       </div>
     </nav>
-
+    
     <!-- Handling views with Done Js Router -->
     <!--<div ui-view></div> this is AngularJS router-->
     <main>
@@ -110,7 +110,6 @@
       {{/case}}
     {{/switch}}
     </main>
-    
     <!-- Footer -->
     <footer class="page-footer red">
       <div class="container">
