@@ -2,6 +2,7 @@ import AppMap from "can-ssr/app-map";
 import route from "can/route/";
 import 'can/map/define/';
 import 'can/route/pushstate/';
+import Conference from './models/conference';
 
 const AppViewModel = AppMap.extend({
   define: {
@@ -15,6 +16,8 @@ const AppViewModel = AppMap.extend({
     }
   }
 });
+
+Conference.getList({}).then(conferences => console.log(conferences.attr()));
 
 route('/:page', { page: 'home' });
 
