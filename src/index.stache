@@ -4,12 +4,12 @@
     {{asset "css"}}
     {{asset "html5shiv"}}
 
-    <link rel="icon" type="image/png" href="src/img/favicon.png">
     <!-- Place favicon.ico in the root directory -->
-
+    <link rel="icon" type="image/png" href="src/img/favicon.png">
+    
+    <!--Import global css-->
     <link type="text/css" rel="stylesheet" href="src/style/css/animate.css">
     <link type="text/css" rel="stylesheet" href="src/style/css/main.css">
-
     <link type="text/css" rel="stylesheet" href="src/style/css/index.css">
 
     <!--Import materialize.css-->
@@ -20,6 +20,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 
     <link type="text/css" rel="stylesheet" href="src/style/material-icon/material-icon.css" rel="stylesheet">
+      
+    <script type="text/javascript" src="src/lib/jquery.min.js"></script>
 
   </head>
   <body>
@@ -55,59 +57,64 @@
     </nav>
 
     <!-- Handling views with Done Js Router -->
-    <!--<div ui-view></div> this is AngularJS router-->
     <main>
     {{#switch page}}
-      {{#case "home"}}
-      <can-import from="youcode-website/home/">
-        {{#if isPending}}
-          Loading...
-        {{else}}
-          <header-home/>
-        {{/if}}
-      </can-import>
-      <can-import from="youcode-website/home/welcome/">
-        {{#if isPending}}
-          Loading...
-        {{else}}
-          <welcome-home/>
-        {{/if}}
-      </can-import>
-      <can-import from="youcode-website/home/search/">
-        {{#if isPending}}
-          Loading...
-        {{else}}
-          <search-home/>
-        {{/if}}
-      </can-import>
-      {{/case}}
-      {{#case 'about'}}
-      <can-import from="youcode-website/about/">
-        {{#if isPending}}
-          Loading...
-        {{else}}
-          <about-page/>
-        {{/if}}
-      </can-import>
-      {{/case}}
-      {{#case 'conferences'}}
-      <can-import from="youcode-website/conferences/">
-        {{#if isPending}}
-          Loading...
-        {{else}}
-          <conferences-page/>
-        {{/if}}
-      </can-import>
-      {{/case}}
-      {{#case 'channels'}}
-      <can-import from="youcode-website/channels/">
-        {{#if isPending}}
-          Loading...
-        {{else}}
-          <channels-page/>
-        {{/if}}
-      </can-import>
-      {{/case}}
+        {{#case "home"}}
+            <can-import from="youcode-website/home/">
+                {{#if isPending}}
+                    Loading...
+                {{else}}
+                    <header-home {^.}/>
+                {{/if}}
+            </can-import>
+            {{#switch search}}
+                {{#case "search"}}
+                <can-import from="youcode-website/home/search/">
+                    {{#if isPending}}
+                        Loading...
+                    {{else}}
+                        <search-home {^.}/>
+                    {{/if}}        
+                </can-import>
+                {{/case}}
+                {{#default}}
+                <can-import from="youcode-website/home/welcome/">
+                    {{#if isPending}}
+                        Loading...
+                    {{else}}
+                        <welcome-home/>
+                    {{/if}}
+                </can-import>
+                {{/case}}
+            {{/switch}}
+        {{/case}}
+        {{#case 'about'}}
+            <can-import from="youcode-website/about/">
+                {{#if isPending}}
+                    Loading...
+                {{else}}
+                    <about-page/>
+                {{/if}}
+            </can-import>
+        {{/case}}
+        {{#case 'conferences'}}
+            <can-import from="youcode-website/conferences/">
+                {{#if isPending}}
+                    Loading...
+                {{else}}
+                    <conferences-page/>
+                {{/if}}
+            </can-import>
+        {{/case}}
+        {{#case 'channels'}}
+            <can-import from="youcode-website/channels/">
+                {{#if isPending}}
+                    Loading...
+                {{else}}
+                    <channels-page/>
+                {{/if}}
+            </can-import>
+        {{/case}}
     {{/switch}}
     </main>
     
@@ -132,7 +139,7 @@
       </div>
       <div class="footer-copyright">
         <div class="container">
-          © 2015 Copyright YouCode.io
+          © {{annee}} Copyright YouCode.io
         </div>
       </div>
     </footer>
@@ -150,12 +157,11 @@
   {{/switch}}
 
   <!--Import jQuery before materialize.js-->
-  <script type="text/javascript" src="src/lib/jquery.min.js"></script>
   <script type="text/javascript" src="src/lib/vendor/modernizr-2.8.3.min.js"></script>
   
   <script type="text/javascript" src="src/lib/moment.js"></script>
   <script type="text/javascript" src="src/lib/plugins.js"></script>
   <script type="text/javascript" src="src/lib/materialize.min.js"></script>
 
-  <script type="text/javascript" src="src/view/index.js"></script>
+  <script type="text/javascript" src="src/index.js"></script>
 </html>
