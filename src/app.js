@@ -2,6 +2,7 @@ import AppMap from "can-ssr/app-map";
 import route from "can/route/";
 import 'can/map/define/';
 import 'can/route/pushstate/';
+import Conference from './models/conference';
 
 route(':page&:search', { page: 'home' , search: 'welcome'});
 route.ready(); // do not forget to initialize can.route
