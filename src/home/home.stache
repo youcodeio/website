@@ -18,7 +18,7 @@
              </span>
          </div>
          <div class="col s2 m2 l4">
-             <a class="btn-floating btn-large waves-effect waves-light red" ($click)="searched()" href="{{routeUrl page='home' search='search' }}">
+             <a class="btn-floating btn-large waves-effect waves-light red" can-click={searched}>
                  <i class="mdi-action-done"></i>
              </a>
          </div>

@@ -62,7 +62,9 @@
         {{#case "home"}}
             <can-import from="youcode-website/home/">
                 {{#if isPending}}
-                    Loading...
+                   <div class="progress col s12 m12 l12">
+                        <div class="indeterminate"></div>
+                    </div>
                 {{else}}
                     <header-home {^.}/>
                 {{/if}}
@@ -71,7 +73,9 @@
                 {{#case "search"}}
                 <can-import from="youcode-website/home/search/">
                     {{#if isPending}}
-                        Loading...
+                        <div class="progress col s12 m12 l12">
+                            <div class="indeterminate"></div>
+                        </div>
                     {{else}}
                         <search-home {^.}/>
                     {{/if}}        
@@ -80,7 +84,9 @@
                 {{#default}}
                 <can-import from="youcode-website/home/welcome/">
                     {{#if isPending}}
-                        Loading...
+                        <div class="progress col s12 m12 l12">
+                            <div class="indeterminate"></div>
+                        </div>
                     {{else}}
                         <welcome-home/>
                     {{/if}}
@@ -91,7 +97,9 @@
         {{#case 'about'}}
             <can-import from="youcode-website/about/">
                 {{#if isPending}}
-                    Loading...
+                    <div class="progress col s12 m12 l12">
+                        <div class="indeterminate"></div>
+                    </div>
                 {{else}}
                     <about-page/>
                 {{/if}}
@@ -100,7 +108,9 @@
         {{#case 'conferences'}}
             <can-import from="youcode-website/conferences/">
                 {{#if isPending}}
-                    Loading...
+                    <div class="progress col s12 m12 l12">
+                        <div class="indeterminate"></div>
+                    </div>
                 {{else}}
                     <conferences-page/>
                 {{/if}}
@@ -109,7 +119,9 @@
         {{#case 'channels'}}
             <can-import from="youcode-website/channels/">
                 {{#if isPending}}
-                    Loading...
+                    <div class="progress col s12 m12 l12">
+                        <div class="indeterminate"></div>
+                    </div>
                 {{else}}
                     <channels-page/>
                 {{/if}}
