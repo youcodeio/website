@@ -4,11 +4,9 @@ import 'can/map/define/';
 import './home.less!';
 import template from './home.stache!';
 
-var isSearched = false;
-
 export const ViewModel = Map.extend({
   define: {
-    mssage: {
+    message: {
       value: 'This is the header-home component'
     }
   }

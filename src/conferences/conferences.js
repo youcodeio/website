@@ -12,7 +12,7 @@ export const ViewModel = Map.extend({
     },
     conferences: {
       get() {
-        return Conferences.getList({});
+        return Conferences.getList();
       }
     }
   }

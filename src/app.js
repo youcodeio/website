@@ -2,7 +2,6 @@ import AppMap from "can-ssr/app-map";
 import route from "can/route/";
 import 'can/map/define/';
 import 'can/route/pushstate/';
-import Conference from './models/conference';
 
 route(':page&:search:query', { page: 'home' , search: 'welcome'});
 route.ready(); // do not forget to initialize can.route
@@ -52,18 +51,17 @@ const AppViewModel = AppMap.extend({
     searched: function(){
         switchValue = this.switch;
         lastQueryValue = this.lastQuery;
-        isNull = true;
+        isNull = false;
         //appelle requete ajax
-        
         route.attr('page', 'home');
         route.attr('search' , '');
         route.attr('search' , 'search');
-        route.attr('query' , lastQueryValue);
     },
     isNull: function(){
         return isNull;
     }
 });
+
 
 export default AppViewModel;
 

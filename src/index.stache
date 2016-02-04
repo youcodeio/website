@@ -1,101 +1,102 @@
 <html>
-  <head>
-    <title>{{title}}</title>
-    {{asset "css"}}
-    {{asset "html5shiv"}}
+    <head>
+        <title>{{title}}</title>
+        {{asset "css"}}
+        {{asset "html5shiv"}}
 
-    <!-- Place favicon.ico in the root directory -->
-    <link rel="icon" type="image/png" href="src/img/favicon.png">
+        <!-- Place favicon.ico in the root directory -->
+        <link rel="icon" type="image/png" href="src/img/favicon.png">
     
-    <!--Import global css-->
-    <link type="text/css" rel="stylesheet" href="src/style/css/animate.css">
-    <link type="text/css" rel="stylesheet" href="src/style/css/main.css">
-    <link type="text/css" rel="stylesheet" href="src/style/css/index.css">
+        <!--Import global css-->
+        <link type="text/css" rel="stylesheet" href="src/style/css/animate.css">
+        <link type="text/css" rel="stylesheet" href="src/style/css/main.css">
+        <link type="text/css" rel="stylesheet" href="src/style/css/index.css">
 
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="src/style/css/materialize.css"  media="screen,projection"/>
-    <link type="text/css" rel="stylesheet" href="src/style/css/normalize.css">
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="src/style/css/materialize.css"  media="screen,projection"/>
+        <link type="text/css" rel="stylesheet" href="src/style/css/normalize.css">
 
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 
-    <link type="text/css" rel="stylesheet" href="src/style/material-icon/material-icon.css" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="src/style/material-icon/material-icon.css" rel="stylesheet">
       
-    <script type="text/javascript" src="src/lib/jquery.min.js"></script>
+        <script type="text/javascript" src="src/lib/jquery.min.js"></script>
 
-  </head>
-  <body>
-    <can-import from="youcode-website/styles.less!" />
-    <can-import from="youcode-website/app" export-as="viewModel" />
-
-    <!--[if lt IE 8]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-
-    <!-- Add your site or application content here -->
-
-    <!-- Navigation bar -->
-    <nav>
-      <div class="nav-wrapper red">
-        <a href="#!" class="brand-logo waves-effect waves-light">
-          <img src="src/img/youcode_logo.svg" alt="Logo YouCode" class="index_youcodeLogo">
-        </a>
-        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="{{routeUrl page='home' }}" class="waves-effect waves-light">Home</a></li>
-          <li><a href="{{routeUrl page='about' }}" class="waves-effect waves-light">About</a></li>
-          <li><a href="{{routeUrl page='conferences' }}" class="waves-effect waves-light">Conferences</a></li>
-          <li><a href="{{routeUrl page='channels' }}" class="waves-effect waves-light">Channels</a></li>
-        </ul>
-        <ul class="side-nav" id="mobile-demo">
-          <li><a href="{{routeUrl page='home' }}" class="waves-effect waves-light width_link_on_mobile">Home</a></li>
-          <li><a href="{{routeUrl page='about' }}" class="waves-effect waves-light width_link_on_mobile">About</a></li>
-          <li><a href="{{routeUrl page='conferences' }}" class="waves-effect waves-light width_link_on_mobile">Conferences</a></li>
-          <li><a href="{{routeUrl page='channels' }}" class="waves-effect waves-light width_link_on_mobile">Channels</a></li>
-        </ul>
-      </div>
-    </nav>
+    </head>
     
-    <!-- Handling views with Done Js Router -->
-    <main>
-    {{#switch page}}
-        {{#case "home"}}
-            <can-import from="youcode-website/home/">
+    <body>
+        <can-import from="youcode-website/styles.less!" />
+        <can-import from="youcode-website/app" export-as="viewModel" />
+
+        <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+
+        <!-- Navigation bar -->
+        <nav>
+            <div class="nav-wrapper red">
+                <a href="#!" class="brand-logo waves-effect waves-light">
+                    <img src="src/img/youcode_logo.svg" alt="Logo YouCode" class="index_youcodeLogo">
+                </a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="{{routeUrl page='home' }}" class="waves-effect waves-light">Home</a></li>
+                    <li><a href="{{routeUrl page='about' }}" class="waves-effect waves-light">About</a></li>
+                    <li><a href="{{routeUrl page='conferences' }}" class="waves-effect waves-light">Conferences</a></li>
+                    <li><a href="{{routeUrl page='channels' }}" class="waves-effect waves-light">Channels</a></li>
+                </ul>
+                <ul class="side-nav" id="mobile-demo">
+                    <li><a href="{{routeUrl page='home' }}" class="waves-effect waves-light width_link_on_mobile">Home</a></li>
+                    <li><a href="{{routeUrl page='about' }}" class="waves-effect waves-light width_link_on_mobile">About</a></li>
+                    <li><a href="{{routeUrl page='conferences' }}" class="waves-effect waves-light width_link_on_mobile">Conferences</a></li>
+                    <li><a href="{{routeUrl page='channels' }}" class="waves-effect waves-light width_link_on_mobile">Channels</a></li>
+                </ul>
+            </div>
+        </nav>
+    
+        <!-- Handling views with Done Js Router -->
+        <main>
+        {{#switch page}}
+            {{#case "home"}}
+                <can-import from="youcode-website/home/">
                 {{#if isPending}}
-                   <div class="progress col s12 m12 l12">
+                    <div class="progress col s12 m12 l12">
                         <div class="indeterminate"></div>
                     </div>
                 {{else}}
                     <header-home {^.}/>
                 {{/if}}
-            </can-import>
-            {{#switch search}}
-                {{#case "search"}}
-                <can-import from="youcode-website/home/search/">
-                    {{#if isPending}}
-                        <div class="progress col s12 m12 l12">
-                            <div class="indeterminate"></div>
-                        </div>
-                    {{else}}
-                        <search-home {^.}/>
-                    {{/if}}        
                 </can-import>
-                {{/case}}
-                {{#default}}
-                <can-import from="youcode-website/home/welcome/">
-                    {{#if isPending}}
-                        <div class="progress col s12 m12 l12">
-                            <div class="indeterminate"></div>
-                        </div>
-                    {{else}}
-                        <welcome-home/>
-                    {{/if}}
-                </can-import>
-                {{/case}}
-            {{/switch}}
-        {{/case}}
-        {{#case 'about'}}
-            <can-import from="youcode-website/about/">
+                {{#switch search}}
+                    {{#case "search"}}
+                        <can-import from="youcode-website/home/search/">
+                        {{#if isPending}}
+                            <div class="progress col s12 m12 l12">
+                                <div class="indeterminate"></div>
+                            </div>
+                        {{else}}
+                            <search-home {^.}/>
+                        {{/if}}        
+                        </can-import>
+                    {{/case}}
+                    {{#default}}
+                        <can-import from="youcode-website/home/welcome/">
+                        {{#if isPending}}
+                            <div class="progress col s12 m12 l12">
+                                <div class="indeterminate"></div>
+                            </div>
+                        {{else}}
+                            <welcome-home/>
+                        {{/if}}
+                        </can-import>
+                    {{/case}}
+                {{/switch}}
+            {{/case}}
+            {{#case 'about'}}
+                <can-import from="youcode-website/about/">
                 {{#if isPending}}
                     <div class="progress col s12 m12 l12">
                         <div class="indeterminate"></div>
@@ -103,10 +104,10 @@
                 {{else}}
                     <about-page/>
                 {{/if}}
-            </can-import>
-        {{/case}}
-        {{#case 'conferences'}}
-            <can-import from="youcode-website/conferences/">
+                </can-import>
+            {{/case}}
+            {{#case 'conferences'}}
+                <can-import from="youcode-website/conferences/">
                 {{#if isPending}}
                     <div class="progress col s12 m12 l12">
                         <div class="indeterminate"></div>
@@ -114,10 +115,10 @@
                 {{else}}
                     <conferences-page/>
                 {{/if}}
-            </can-import>
-        {{/case}}
-        {{#case 'channels'}}
-            <can-import from="youcode-website/channels/">
+                </can-import>
+            {{/case}}
+            {{#case 'channels'}}
+                <can-import from="youcode-website/channels/">
                 {{#if isPending}}
                     <div class="progress col s12 m12 l12">
                         <div class="indeterminate"></div>
@@ -125,54 +126,55 @@
                 {{else}}
                     <channels-page/>
                 {{/if}}
-            </can-import>
-        {{/case}}
-    {{/switch}}
-    </main>
-    <!-- Footer -->
-    <footer class="page-footer red">
-      <div class="container">
-        <div class="row">
-          <div class="col l6 s12">
-            <h5 class="white-text">Youcode website</h5>
-            <p class="grey-text text-lighten-4">You can use youcode to search Talks or Tutorials and learn it.</p>
-          </div>
-          <div class="col l4 offset-l2 s12">
-            <h5 class="white-text">Links</h5>
-            <ul>
-              <li><a class="grey-text text-lighten-3" href="https://twitter.com/you_codeio" target="_blank">Twitter</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Facebook</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Instagram</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Google+</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="footer-copyright">
-        <div class="container">
-          © {{annee}} Copyright YouCode.io
-        </div>
-      </div>
-    </footer>
+                </can-import>
+            {{/case}}
+        {{/switch}}
+        </main>
+        <!-- Footer -->
+        <footer class="page-footer red">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="white-text">Youcode website</h5>
+                        <p class="grey-text text-lighten-4">You can use youcode to search Talks or Tutorials and learn it.</p>
+                    </div>
+                    <div class="col l4 offset-l2 s12">
+                        <h5 class="white-text">Links</h5>
+                        <ul>
+                            <li><a class="grey-text text-lighten-3" href="https://twitter.com/you_codeio" target="_blank">Twitter</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Facebook</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Instagram</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Google+</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    <span>© {{annee}} Copyright YouCode.io</span>
+                </div>
+            </div>
+        </footer>
 
-    {{asset "inline-cache"}}
-  </body>
+        {{asset "inline-cache"}}
+    
 
-  {{#switch env.NODE_ENV}}
-    {{#case "production"}}
-      <script src="{{joinBase 'node_modules/steal/steal.production.js'}}"  main="youcode-website/index.stache!done-autorender"></script>
-    {{/case}}
-    {{#default}}
-      <script src="/node_modules/steal/steal.js"></script>
-    {{/default}}
-  {{/switch}}
+        {{#switch env.NODE_ENV}}
+            {{#case "production"}}
+                <script src="{{joinBase 'node_modules/steal/steal.production.js'}}"  main="youcode-website/index.stache!done-autorender"></script>
+            {{/case}}
+            {{#default}}
+                <script src="/node_modules/steal/steal.js"></script>
+            {{/default}}
+        {{/switch}}
 
-  <!--Import jQuery before materialize.js-->
-  <script type="text/javascript" src="src/lib/vendor/modernizr-2.8.3.min.js"></script>
-  
-  <script type="text/javascript" src="src/lib/moment.js"></script>
-  <script type="text/javascript" src="src/lib/plugins.js"></script>
-  <script type="text/javascript" src="src/lib/materialize.min.js"></script>
+        <!--Import jQuery before materialize.js-->
+        <script type="text/javascript" src="src/lib/vendor/modernizr-2.8.3.min.js"></script>
 
-  <script type="text/javascript" src="src/index.js"></script>
+        <script type="text/javascript" src="src/lib/moment.js"></script>
+        <script type="text/javascript" src="src/lib/plugins.js"></script>
+        <script type="text/javascript" src="src/lib/materialize.min.js"></script>
+
+        <script type="text/javascript" src="src/index.js"></script>
+    </body>
 </html>

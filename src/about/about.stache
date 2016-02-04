@@ -3,7 +3,6 @@
 </div>
 <div class="row container">
   <!-- Card -->
-  {^to-parent}={{aboutTeam}}
   {{#each aboutTeam.value}}
   <div class="col s12 m12 l12 card-about">
   <hr class="col s12 l12 m12">

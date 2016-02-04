@@ -12,7 +12,7 @@ export const ViewModel = Map.extend({
     },
     aboutTeam: {
       get() {
-        return About.getList({});
+        return About.getList();
       }
     }
   }
