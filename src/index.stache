@@ -18,14 +18,15 @@
 
         <!--Let browser know website is optimized for mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-
+        
         <link type="text/css" rel="stylesheet" href="src/style/material-icon/material-icon.css" rel="stylesheet">
-      
-        <script type="text/javascript" src="src/lib/jquery.min.js"></script>
+        
+        
 
     </head>
     
     <body>
+        
         <can-import from="youcode-website/styles.less!" />
         <can-import from="youcode-website/app" export-as="viewModel" />
 
@@ -60,11 +61,13 @@
         <!-- Handling views with Done Js Router -->
         <main>
         {{#switch page}}
-            {{#case "home"}}
+            {{#default}}
                 <can-import from="youcode-website/home/">
                 {{#if isPending}}
-                    <div class="progress col s12 m12 l12">
-                        <div class="indeterminate"></div>
+                    <div class="container">
+                        <div class="progress col s12 m12 l12">
+                            <div class="indeterminate"></div>
+                        </div>
                     </div>
                 {{else}}
                     <header-home {^.}/>
@@ -74,8 +77,10 @@
                     {{#case "search"}}
                         <can-import from="youcode-website/home/search/">
                         {{#if isPending}}
-                            <div class="progress col s12 m12 l12">
-                                <div class="indeterminate"></div>
+                            <div class="container">
+                                <div class="progress col s12 m12 l12">
+                                    <div class="indeterminate"></div>
+                                </div>
                             </div>
                         {{else}}
                             <search-home {^.}/>
@@ -85,11 +90,13 @@
                     {{#default}}
                         <can-import from="youcode-website/home/welcome/">
                         {{#if isPending}}
-                            <div class="progress col s12 m12 l12">
-                                <div class="indeterminate"></div>
+                            <div class="container">
+                                <div class="progress col s12 m12 l12">
+                                    <div class="indeterminate"></div>
+                                </div>
                             </div>
                         {{else}}
-                            <welcome-home/>
+                            <welcome-home {^.}/>
                         {{/if}}
                         </can-import>
                     {{/case}}
@@ -102,29 +109,33 @@
                         <div class="indeterminate"></div>
                     </div>
                 {{else}}
-                    <about-page/>
+                    <about-page {^.}/>
                 {{/if}}
                 </can-import>
             {{/case}}
             {{#case 'conferences'}}
                 <can-import from="youcode-website/conferences/">
                 {{#if isPending}}
-                    <div class="progress col s12 m12 l12">
-                        <div class="indeterminate"></div>
+                    <div class="container">
+                        <div class="progress col s12 m12 l12">
+                            <div class="indeterminate"></div>
+                        </div>
                     </div>
                 {{else}}
-                    <conferences-page/>
+                    <conferences-page {^.}/>
                 {{/if}}
                 </can-import>
             {{/case}}
             {{#case 'channels'}}
                 <can-import from="youcode-website/channels/">
                 {{#if isPending}}
-                    <div class="progress col s12 m12 l12">
-                        <div class="indeterminate"></div>
+                    <div class="container">
+                        <div class="progress col s12 m12 l12">
+                            <div class="indeterminate"></div>
+                        </div>
                     </div>
                 {{else}}
-                    <channels-page/>
+                    <channels-page {^.}/>
                 {{/if}}
                 </can-import>
             {{/case}}
