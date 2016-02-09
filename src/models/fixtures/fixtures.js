@@ -4,3 +4,5 @@
 import 'youcode-website/models/fixtures/conference';
 
 import 'youcode-website/models/fixtures/about';
+
+import 'youcode-website/models/fixtures/channels';
