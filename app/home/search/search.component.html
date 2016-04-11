@@ -1,0 +1,58 @@
+<!-- $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ -->
+<!-- $$$$$$$$$$$$$$$$ Début la partie de Recherche de YouCode.io $$$$$$$$$$$$$$$$$$$ -->
+<!-- $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ --> 
+<div class="index_swag container search_contentPosition">
+    <!-- Page Content goes here -->
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <h3 class="valign search_title">Result of YouCode search</h3>
+        </div>
+        <div *ngIf="loading">
+            <div class="progress col s12 m12 l12">
+                <div class="indeterminate"></div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="!loading">   
+        <div *ngIf="!search">
+            <p><i class="mdi-alert-error red-text"></i> Sorry, we can't find anything for the keyword 
+                <strong>{{query}}</strong> in 
+                <strong>
+                    <span *ngIf="type">{{tutorials}}</span>
+                    <span *ngIf="!type">{{talks}}</span>
+                </strong>.
+            </p>
+        </div>
+    
+        <!-- Handling cards -->
+        <div class="row" *ngIf="search">
+            <div class="col s12 m6 l4" *ngFor="#search of search">    
+                <div class="card">
+                    <!-- Hover cards -->
+                    <div class="search_cardHover">
+                        <p class="search_cardHoverVideoTitle white-text">{{search.snippet.title}}</p>
+                        <p class="search_cardHoverVideoDescription white-text">{{search.snippet.description}}</p>
+                        <div class="row search_cardHoverButtonPosition">
+                            <a class="waves-effect waves-light btn white red-text right" href="https://www.youtube.com/watch?v={{search.id.videoId}}" target="_blank"><i class="mdi-hardware-keyboard-control right red-text"></i>Youtube</a>
+                        </div>
+                    </div>
+                    <div class="card-image">
+                        <img class="search_cardImage" src="{{search.snippet.thumbnails.high.url}}">
+                    </div>
+                    <div class="card-content search_cardContentVideoTitle">
+                        <p class="search_cardVideoTitle">{{search.snippet.title}}</p>
+                    </div>
+                    <div class="card-action">
+                        <p class="col s6 m6 l6 search_channelTitle">{{search.snippet.channelTitle}}</p>
+                        <p class="col s6 m6 l6 search_channelPublishedAt">{{search.snippet.publishedAt | amTimeAgo}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ -->
+<!-- $$$$$$$$$$$$$$$$ Fin de la partie de Recherche de YouCode.io $$$$$$$$$$$$$$$$$$$ -->
+<!-- $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ -->
