@@ -1,11 +1,8 @@
+import { Info } from './info';
+
 export class Channels {
+    info: Info,
     name: string,
-    description: string,
-    banner: string,
-    mobileBanner: boolean,
-    link: string,
-    
-    
     ytid: string,
-    isTuts: boolean
+    isTuts: boolean    
 }

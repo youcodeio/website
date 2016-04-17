@@ -17,7 +17,7 @@
                         <div class="channels_lastChannelTitle red">
                             {{selectedChannel.name}}
                         </div>
-                        <img class="channels_lastChannelBanner" src="{{selectedChannel.banner}}">
+                        <img class="channels_lastChannelBanner" src="{{selectedChannel.bannerImageUrl}}">
                     </div>
 
 
@@ -51,7 +51,7 @@
             <div class="card channels">
                 <div class="channels_cardHover">
                     <!-- lien vers le channel -->
-                    <a target="_blank" href="https://www.youtube.com/channel/{{channel.link}}" class="col s12 m12 l12 channels_lastChannelIconeView  waves-effect waves-light">
+                    <a target="_blank" href="https://www.youtube.com/channel/{{channel.id}}" class="col s12 m12 l12 channels_lastChannelIconeView  waves-effect waves-light">
                         <i class="mdi-action-visibility white-text small "></i>
                     </a>
                     <!-- deplacement vers la premier card -->
@@ -59,7 +59,7 @@
                         <i class="mdi-content-add white-text small"></i>
                     </a>
                 </div>
-                <img class="channels_channelBanner" src="{{channel.mobileBanner}}"/>
+                <img class="channels_channelBanner" src="{{channel.bannerMobileExtraHdImageUrl}}"/>
                 <div class="channels_channelTitle red">{{channel.name}}</div>
             </div>
         </div>

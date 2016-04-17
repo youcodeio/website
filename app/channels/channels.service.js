@@ -43,13 +43,16 @@ System.register(['./mock-channels', './mock-video', 'angular2/core', 'angular2/h
                 ChannelsService.prototype.getChannels = function () {
                     return this.http.get('https://youcode-backend.cleverapps.io/channels')
                         .map(function (responseData) { return responseData.json(); })
-                        .do(function (data) { return console.log(data); })
                         .catch(this.handleError);
                 };
                 ChannelsService.prototype.getVideo = function (id) {
-                    return this.http.get('https://youcode-backend.cleverapps.io/channel/' + id)
+                    return this.http.get('https://youcode-backend.cleverapps.io/channels/' + id + '/lastVideos')
                         .map(function (responseData) { return responseData.json(); })
-                        .do(function (data) { return console.log(data); })
+                        .catch(this.handleError);
+                };
+                ChannelsService.prototype.getInfo = function (id) {
+                    return this.http.get('https://youcode-backend.cleverapps.io/channels/' + id + '/info')
+                        .map(function (responseData) { return responseData.json(); })
                         .catch(this.handleError);
                 };
                 ChannelsService.prototype.handleError = function (error) {

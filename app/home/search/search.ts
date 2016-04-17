@@ -30,22 +30,4 @@ export class Search {
         },
         title: string
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-//    title: string,
-//	description: string,
-//    id: string,
-//    image: string,
-//    channelTitle: string,
-//    publishedAt: string
 }

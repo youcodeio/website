@@ -30,18 +30,38 @@ System.register(['angular2/core', './channels.service', 'angular2-moment/TimeAgo
                     this._channelsService = _channelsService;
                     this.loading = true;
                     this._channelsService.getChannels()
-                        .subscribe(function (channels) { return _this.channels = channels; }, function (error) { return _this.errorMessage = true; }, function () { return _this.loading = false; });
-                    this._channelsService.getChannels()
-                        .subscribe(function (channels) { return _this.selectedChannel = channels[0]; }, function (error) { return _this.errorMessage = true; }, function () { return _this.getVideoSelected(); });
+                        .subscribe(function (channels) { return _this.channels = channels; }, function (error) { return _this.errorMessage = true; }, function () { return _this.getAllInfo(); });
                 }
                 ChannelsComponent.prototype.getVideoSelected = function () {
                     var _this = this;
                     this._channelsService.getVideo(this.selectedChannel.ytid)
                         .subscribe(function (video) { return _this.video = video; }, function (error) { return _this.errorMessage = true; });
                 };
+                ChannelsComponent.prototype.getAllInfo = function () {
+                    var _this = this;
+                    if (this.channels) {
+                        this.channels.forEach(function (channel) {
+                            _this._channelsService.getInfo(channel.ytid)
+                                .subscribe(function (info) { return channel.info = info; }, function (error) { return _this.errorMessage = true; }, function () { return _this.extractInfo(channel); });
+                        });
+                    }
+                };
                 ChannelsComponent.prototype.onSelect = function (channel) {
                     this.selectedChannel = channel;
                     this.getVideoSelected();
+                };
+                ChannelsComponent.prototype.extractInfo = function (channel) {
+                    channel.bannerImageUrl = channel.info.items[0].brandingSettings.image.bannerImageUrl;
+                    if (channel.info.items[0].brandingSettings.image.bannerMobileImageUrl) {
+                        channel.bannerMobileExtraHdImageUrl = channel.info.items[0].brandingSettings.image.bannerMobileImageUrl;
+                    }
+                    else {
+                        channel.bannerMobileExtraHdImageUrl = channel.info.items[0].brandingSettings.image.bannerImageUrl;
+                    }
+                    channel.id = channel.info.items[0].id;
+                    this.selectedChannel = this.channels[0];
+                    this.getVideoSelected();
+                    this.loading = false;
                 };
                 ChannelsComponent = __decorate([
                     core_1.Component({
