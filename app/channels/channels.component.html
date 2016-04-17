@@ -18,12 +18,8 @@
                             {{selectedChannel.name}}
                         </div>
                         <img class="channels_lastChannelBanner" src="{{selectedChannel.bannerImageUrl}}">
-                    </div>
-
-
+                    </div>   
                     <!-- content : 2 last videos -->
-
-
                     <div class="col s12 m12 l12" *ngFor="#video of video">
                         <div class="col s3 m3 l3 waves-block waves-effect waves-light">
                             <a class="" href="{{video.etag}}" target="_blank">
@@ -31,7 +27,6 @@
                                 <div class="waves-effect waves-light red z-depth-1 channels_latsChannelYoutubeButton white-text">YOUTUBE</div>
                             </a>
                         </div>
-
                         <p class="channels_lastChannelVideoTitle col s9 m9 l9">
                             {{video.snippet.title}}
                             <span class="channels_lastChannelVideoDescription">
@@ -50,13 +45,13 @@
         <div class="col s6 m4 l3" *ngFor="#channel of channels">
             <div class="card channels">
                 <div class="channels_cardHover">
-                    <!-- lien vers le channel -->
-                    <a target="_blank" href="https://www.youtube.com/channel/{{channel.id}}" class="col s12 m12 l12 channels_lastChannelIconeView  waves-effect waves-light">
-                        <i class="mdi-action-visibility white-text small "></i>
-                    </a>
                     <!-- deplacement vers la premier card -->
-                    <a class="col s12 m12 l12 channels_lastChannelIconePlus  waves-effect waves-light" [class.selected]="channel === selectedChannel" (click)="onSelect(channel)" >
-                        <i class="mdi-content-add white-text small"></i>
+                    <a class="col s12 m12 l12 channels_lastChannelIconeView waves-effect waves-light" [class.selected]="channel === selectedChannel" (click)="onSelect(channel)" >
+                        <i class="mdi-action-visibility white-text small"></i>
+                    </a>
+                    <!-- lien vers le channel -->
+                    <a target="_blank" href="https://www.youtube.com/channel/{{channel.id}}" class="col s12 m12 l12 channels_lastChannelIconePlus waves-effect waves-light">
+                        <i class="mdi-action-open-in-new white-text small "></i>
                     </a>
                 </div>
                 <img class="channels_channelBanner" src="{{channel.bannerMobileExtraHdImageUrl}}"/>
