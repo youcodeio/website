@@ -51,12 +51,20 @@ System.register(['angular2/core', './channels.service', 'angular2-moment/TimeAgo
                     this.getVideoSelected();
                 };
                 ChannelsComponent.prototype.extractInfo = function (channel) {
-                    channel.bannerImageUrl = channel.info.items[0].brandingSettings.image.bannerImageUrl;
-                    if (channel.info.items[0].brandingSettings.image.bannerMobileImageUrl) {
-                        channel.bannerMobileExtraHdImageUrl = channel.info.items[0].brandingSettings.image.bannerMobileImageUrl;
+                    var banner = channel.info.items[0].brandingSettings.image.bannerImageUrl;
+                    var mobile = channel.info.items[0].brandingSettings.image.bannerMobileImageUrl;
+                    if (banner) {
+                        channel.bannerImageUrl = banner;
+                        if (mobile) {
+                            channel.bannerMobileExtraHdImageUrl = mobile;
+                        }
+                        else {
+                            channel.bannerMobileExtraHdImageUrl = "../../img/default_banner.jpg";
+                        }
                     }
                     else {
-                        channel.bannerMobileExtraHdImageUrl = channel.info.items[0].brandingSettings.image.bannerImageUrl;
+                        channel.bannerImageUrl = "../../img/default_banner.jpg";
+                        channel.bannerMobileExtraHdImageUrl = "../../img/default_banner.jpg";
                     }
                     channel.id = channel.info.items[0].id;
                     this.selectFirstChannel();
