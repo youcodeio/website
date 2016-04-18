@@ -59,6 +59,9 @@ System.register(['angular2/core', './channels.service', 'angular2-moment/TimeAgo
                         channel.bannerMobileExtraHdImageUrl = channel.info.items[0].brandingSettings.image.bannerImageUrl;
                     }
                     channel.id = channel.info.items[0].id;
+                    this.selectFirstChannel();
+                };
+                ChannelsComponent.prototype.selectFirstChannel = function () {
                     this.selectedChannel = this.channels[0];
                     this.getVideoSelected();
                     this.loading = false;

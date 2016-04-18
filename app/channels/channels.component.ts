@@ -63,9 +63,12 @@ export class ChannelsComponent {
         }
         channel.id = channel.info.items[0].id;
         
+        this.selectFirstChannel();
+    }
+    
+    selectFirstChannel(){
         this.selectedChannel = this.channels[0];
-        this.getVideoSelected();
-        
-        this.loading = false
+        this.getVideoSelected();        
+        this.loading = false;    
     }
 }

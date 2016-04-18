@@ -32,6 +32,7 @@ System.register(['angular2/core', 'angular2/router', './search/topSearch.service
         execute: function() {
             HomeComponent = (function () {
                 function HomeComponent(_topSearchService, _router) {
+                    var _this = this;
                     this._topSearchService = _topSearchService;
                     this._router = _router;
                     //text
@@ -40,12 +41,8 @@ System.register(['angular2/core', 'angular2/router', './search/topSearch.service
                     //variable de home
                     this.type = false;
                     this.searched = false;
-                }
-                //action a l'initiation du composant
-                HomeComponent.prototype.ngOnInit = function () {
-                    var _this = this;
                     this._topSearchService.getTopSearch().then(function (topSearch) { return _this.topSearch = topSearch; });
-                };
+                }
                 //fonction de recherche
                 HomeComponent.prototype.onSearch = function () {
                     //changement de l'url

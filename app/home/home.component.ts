@@ -1,4 +1,4 @@
-import { Component, OnInit  } from 'angular2/core';
+import { Component } from 'angular2/core';
 import { RouteConfig, Router, ROUTER_DIRECTIVES } from 'angular2/router';
 
 import { Search } from './search/search';
@@ -28,7 +28,7 @@ import { SearchComponent } from './search/search.component';
     }
 ])
 
-export class HomeComponent implements OnInit {
+export class HomeComponent {
     
     //text
     talks = "Talks";
@@ -43,13 +43,11 @@ export class HomeComponent implements OnInit {
     
     constructor(
         private _topSearchService: TopSearchService,
-        private _router: Router) {}
-    
-    //action a l'initiation du composant
-    ngOnInit() {
+        private _router: Router) {
+        
         this._topSearchService.getTopSearch().then(topSearch=> this.topSearch = topSearch);
     }
-    
+        
     //fonction de recherche
     onSearch() {        
         //changement de l'url
