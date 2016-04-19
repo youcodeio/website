@@ -8,9 +8,9 @@
         <div class="col s8 m8 l4 offset-m2 offset-l4">
             <span class="flow-text">
                 <div class="input-field">
-                    <i id="infoSearch" class="mdi-action-search prefix" [ngClass]="{active: searched}"></i>
-                    <input id="icon_prefix" type="text" class="validate" [(ngModel)]="query" maxlength="50"/>
-                    <label id="labelSearch" for="icon_prefix" class="header_search" [ngClass]="{active: searched}">Search</label>
+                    <i id="infoSearch" class="mdi-action-search prefix" [ngClass]="{active: active}"></i>
+                    <input id="icon_prefix" type="text" class="validate" [(ngModel)]="query" maxlength="50" [ngClass]="{invalid: empty}"/>
+                    <label id="labelSearch" for="icon_prefix" class="header_search" [ngClass]="{active: active}">Search</label>
                 </div> 
             </span>
         </div>

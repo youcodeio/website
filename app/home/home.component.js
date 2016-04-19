@@ -38,21 +38,42 @@ System.register(['angular2/core', 'angular2/router', './search/topSearch.service
                     //text
                     this.talks = "Talks";
                     this.tutorials = "Tutorials";
-                    //variable de home
                     this.type = false;
-                    this.searched = false;
+                    this.active = false;
+                    this.empty = false;
                     this._topSearchService.getTopSearch().then(function (topSearch) { return _this.topSearch = topSearch; });
                 }
                 //fonction de recherche
                 HomeComponent.prototype.onSearch = function () {
-                    //changement de l'url
-                    var link = ['Search', { query: this.query, type: this.type }];
-                    this._router.navigate(link);
-                    this.searched = true;
+                    if (this.query) {
+                        var link = ['Search', { query: this.query, type: this.type }];
+                        this._router.navigate(link);
+                        this.empty = false;
+                    }
+                    else {
+                        this.empty = true;
+                    }
                 };
                 HomeComponent.prototype.popular = function (popular) {
                     this.query = popular;
                     this.onSearch();
+                };
+                HomeComponent.prototype.isActive = function () {
+                    console.log('change');
+                    if (this.query) {
+                        this.active = true;
+                    }
+                    else {
+                        this.active = false;
+                    }
+                };
+                HomeComponent.prototype.ngDoCheck = function () {
+                    if (this.query) {
+                        this.active = true;
+                    }
+                    else {
+                        this.active = false;
+                    }
                 };
                 HomeComponent = __decorate([
                     core_1.Component({
