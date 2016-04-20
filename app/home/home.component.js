@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './search/topSearch.service', './welcome/welcome.component', './search/search.component'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', './search/search.service', './welcome/welcome.component', './search/search.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', './search/topSearch.service
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, topSearch_service_1, welcome_component_1, search_component_1;
+    var core_1, router_1, search_service_1, welcome_component_1, search_component_1;
     var HomeComponent;
     return {
         setters:[
@@ -20,8 +20,8 @@ System.register(['angular2/core', 'angular2/router', './search/topSearch.service
             function (router_1_1) {
                 router_1 = router_1_1;
             },
-            function (topSearch_service_1_1) {
-                topSearch_service_1 = topSearch_service_1_1;
+            function (search_service_1_1) {
+                search_service_1 = search_service_1_1;
             },
             function (welcome_component_1_1) {
                 welcome_component_1 = welcome_component_1_1;
@@ -31,9 +31,9 @@ System.register(['angular2/core', 'angular2/router', './search/topSearch.service
             }],
         execute: function() {
             HomeComponent = (function () {
-                function HomeComponent(_topSearchService, _router) {
+                function HomeComponent(_searchService, _router) {
                     var _this = this;
-                    this._topSearchService = _topSearchService;
+                    this._searchService = _searchService;
                     this._router = _router;
                     //text
                     this.talks = "Talks";
@@ -41,7 +41,7 @@ System.register(['angular2/core', 'angular2/router', './search/topSearch.service
                     this.type = false;
                     this.active = false;
                     this.empty = false;
-                    this._topSearchService.getTopSearch().then(function (topSearch) { return _this.topSearch = topSearch; });
+                    this._searchService.getTopSearch().then(function (topSearch) { return _this.topSearch = topSearch; });
                 }
                 //fonction de recherche
                 HomeComponent.prototype.onSearch = function () {
@@ -80,7 +80,7 @@ System.register(['angular2/core', 'angular2/router', './search/topSearch.service
                         selector: 'home',
                         templateUrl: 'app/home/home.component.html',
                         directives: [router_1.ROUTER_DIRECTIVES],
-                        providers: [topSearch_service_1.TopSearchService]
+                        providers: [search_service_1.SearchService]
                     }),
                     router_1.RouteConfig([
                         {
@@ -95,7 +95,7 @@ System.register(['angular2/core', 'angular2/router', './search/topSearch.service
                             component: search_component_1.SearchComponent
                         }
                     ]), 
-                    __metadata('design:paramtypes', [topSearch_service_1.TopSearchService, router_1.Router])
+                    __metadata('design:paramtypes', [search_service_1.SearchService, router_1.Router])
                 ], HomeComponent);
                 return HomeComponent;
             }());

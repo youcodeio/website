@@ -1,8 +1,6 @@
 import { Channels } from './channels';
 import { Video } from './video';
 import { Info } from './info';
-import { CHANNELS } from './mock-channels';
-import { VIDEO } from './mock-video';
 import { Injectable } from 'angular2/core';
 import { Http } from 'angular2/http';
 import { Observable } from 'rxjs/Observable';
@@ -10,15 +8,7 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class ChannelsService {
     
-    constructor(private http: Http) { }
-    
-    getChannelsBouchon() {
-        return Promise.resolve(CHANNELS);
-    }
-    
-    getVideoBouchon() {
-        return Promise.resolve(VIDEO);
-    }
+    constructor(private http: Http) { }    
     
     getChannels() {
         return this.http.get('https://youcode-backend.cleverapps.io/channels')

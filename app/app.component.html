@@ -1,23 +1,25 @@
-<nav>
-    <div class="nav-wrapper red">
-        <a [routerLink]="['Home']" class="brand-logo waves-effect waves-light">
-            <img src="../img/YouCode.png" alt="Logo YouCode" class="index_youcodeLogo">
-        </a>
-        <a href="#" data-activates="mobile-demo" class="button-collapse "><i class="mdi-navigation-menu white-text"></i></a>
-        <ul class="right hide-on-med-and-down">
-            <li><a [routerLink]="['Home']" class="waves-effect waves-light">{{home}}</a></li>
-            <li><a [routerLink]="['About']" class="waves-effect waves-light">{{about}}</a></li>
-            <li><a [routerLink]="['Conferences']" class="waves-effect waves-light">{{conferences}}</a></li>
-            <li><a [routerLink]="['Channels']" class="waves-effect waves-light">{{channels}}</a></li>
-        </ul>
-        <ul class="side-nav" id="mobile-demo">
-            <li><a [routerLink]="['Home']" class="waves-effect waves-light">{{home}}</a></li>
-            <li><a [routerLink]="['About']" class="waves-effect waves-light">{{about}}</a></li>
-            <li><a [routerLink]="['Conferences']" class="waves-effect waves-light">{{conferences}</a></li>
-            <li><a [routerLink]="['Channels']" class="waves-effect waves-light">{{channels}}</a></li>
-        </ul>
-    </div>
-</nav>
+<div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper red">
+            <a [routerLink]="['Home']" class="brand-logo waves-effect waves-light">
+                <img src="../img/YouCode.png" alt="Logo YouCode" class="index_youcodeLogo">
+            </a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu white-text"></i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a [routerLink]="['Home']" class="waves-effect waves-light">{{home}}</a></li>
+                <li><a [routerLink]="['About']" class="waves-effect waves-light">{{about}}</a></li>
+                <li><a [routerLink]="['Conferences']" class="waves-effect waves-light">{{conferences}}</a></li>
+                <li><a [routerLink]="['Channels']" class="waves-effect waves-light">{{channels}}</a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+                <li><a [routerLink]="['Home']" class="waves-effect waves-light">{{home}}</a></li>
+                <li><a [routerLink]="['About']" class="waves-effect waves-light">{{about}}</a></li>
+                <li><a [routerLink]="['Conferences']" class="waves-effect waves-light">{{conferences}}</a></li>
+                <li><a [routerLink]="['Channels']" class="waves-effect waves-light">{{channels}}</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
 <router-outlet></router-outlet>
 <!-- Footer -->
 <footer class="page-footer red">

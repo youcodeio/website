@@ -3,7 +3,7 @@ import { RouteConfig, Router, ROUTER_DIRECTIVES } from 'angular2/router';
 
 import { Search } from './search/search';
 import { TopSearch } from './search/topSearch';
-import { TopSearchService } from './search/topSearch.service';
+import { SearchService } from './search/search.service';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { SearchComponent } from './search/search.component';
 
@@ -11,7 +11,7 @@ import { SearchComponent } from './search/search.component';
     selector: 'home',
     templateUrl: 'app/home/home.component.html',
     directives: [ROUTER_DIRECTIVES],
-    providers: [TopSearchService]
+    providers: [SearchService]
 })
 
 @RouteConfig([
@@ -44,14 +44,14 @@ export class HomeComponent implements DoCheck {
     differ: any;
     
     constructor(
-        private _topSearchService: TopSearchService,
+        private _searchService: SearchService,
         private _router: Router) {
         
         this.type = false;
         this.active = false;
         this.empty = false;
         
-        this._topSearchService.getTopSearch().then(topSearch=> this.topSearch = topSearch);
+        this._searchService.getTopSearch().then(topSearch=> this.topSearch = topSearch);
     }
         
     //fonction de recherche

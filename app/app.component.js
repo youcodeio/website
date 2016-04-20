@@ -34,12 +34,16 @@ System.register(['angular2/core', 'angular2/router', './home/home.component', '.
             }],
         execute: function() {
             AppComponent = (function () {
-                function AppComponent() {
+                function AppComponent(el) {
+                    this.el = el;
                     this.home = 'Home';
                     this.about = 'About';
                     this.conferences = 'Conferences';
                     this.channels = 'Channels';
                 }
+                AppComponent.prototype.ngAfterViewInit = function () {
+                    jQuery(this.el.nativeElement).find(".button-collapse").sideNav();
+                };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
@@ -68,7 +72,7 @@ System.register(['angular2/core', 'angular2/router', './home/home.component', '.
                             component: channels_component_1.ChannelsComponent
                         }
                     ]), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [core_1.ElementRef])
                 ], AppComponent);
                 return AppComponent;
             }());
