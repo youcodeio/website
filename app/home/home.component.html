@@ -29,10 +29,10 @@
 
     <div class="row col s12 m12 l12">
         <!-- Switch -->
-        <div class="switch header_choix center-align">
+        <div class="switch header_choix center-align" >
             <label>
                 <span>{{talks}}</span>
-                <input #switch type="checkbox" [(ngModel)]="type" (change)="type = switch.checked"/>
+                <input type="checkbox" [(ngModel)]="type" (click)="toggle()"/>
                 <span class="lever"></span>
                 <span>{{tutorials}}</span>
             </label>

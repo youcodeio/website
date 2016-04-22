@@ -31,22 +31,23 @@ System.register(['angular2/core', 'angular2/router', './search/search.service', 
             }],
         execute: function() {
             HomeComponent = (function () {
-                function HomeComponent(_searchService, _router) {
+                function HomeComponent(_searchService, _router, _routeParams) {
                     var _this = this;
                     this._searchService = _searchService;
                     this._router = _router;
+                    this._routeParams = _routeParams;
                     //text
                     this.talks = "Talks";
                     this.tutorials = "Tutorials";
-                    this.type = false;
                     this.active = false;
                     this.empty = false;
+                    this.type = false;
                     this._searchService.getTopSearch().then(function (topSearch) { return _this.topSearch = topSearch; });
                 }
                 //fonction de recherche
                 HomeComponent.prototype.onSearch = function () {
                     if (this.query) {
-                        var link = ['Search', { query: this.query, type: this.type }];
+                        var link = ['Search', { query: this.query.replace('#', 'alt043'), type: this.type }];
                         this._router.navigate(link);
                         this.empty = false;
                     }
@@ -58,15 +59,6 @@ System.register(['angular2/core', 'angular2/router', './search/search.service', 
                     this.query = popular;
                     this.onSearch();
                 };
-                HomeComponent.prototype.isActive = function () {
-                    console.log('change');
-                    if (this.query) {
-                        this.active = true;
-                    }
-                    else {
-                        this.active = false;
-                    }
-                };
                 HomeComponent.prototype.ngDoCheck = function () {
                     if (this.query) {
                         this.active = true;
@@ -74,6 +66,11 @@ System.register(['angular2/core', 'angular2/router', './search/search.service', 
                     else {
                         this.active = false;
                     }
+                };
+                HomeComponent.prototype.toggle = function () {
+                    this.type = !this.type;
+                    this.onSearch();
+                    this.type = !this.type;
                 };
                 HomeComponent = __decorate([
                     core_1.Component({
@@ -95,7 +92,7 @@ System.register(['angular2/core', 'angular2/router', './search/search.service', 
                             component: search_component_1.SearchComponent
                         }
                     ]), 
-                    __metadata('design:paramtypes', [search_service_1.SearchService, router_1.Router])
+                    __metadata('design:paramtypes', [search_service_1.SearchService, router_1.Router, router_1.RouteParams])
                 ], HomeComponent);
                 return HomeComponent;
             }());

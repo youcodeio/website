@@ -29,7 +29,7 @@ export class SearchComponent {
         private _searchService: SearchService,
         private _routeParams: RouteParams) {
         
-            this.query = this._routeParams.get('query');
+        this.query = this._routeParams.get('query').replace('alt043','#');
             this.type = this._routeParams.get('type');
             this._searchService.getSearch(this.query,this.type)
                 .subscribe( 
