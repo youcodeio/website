@@ -4,7 +4,6 @@ $( document ).ready(function(){
         $(this).find('.channels_cardHover').slideDown("slow");
     }).on( 'mouseleave', '.card', function() {
         $(this).find('.search_cardHover').slideUp("slow");
-        $(this).find('.channels_cardHover').slideUp("slow");
-        
+        $(this).find('.channels_cardHover').slideUp("slow");        
     });
 })

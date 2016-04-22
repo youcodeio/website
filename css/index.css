@@ -263,6 +263,15 @@
     text-overflow: ellipsis; /* pour le reste du monde */
 }
 
+.pagination-next{
+    cursor: pointer;
+}
+
+.pagination-previous{
+    cursor: pointer;
+}
+
+
 /*
 -------------------------------------------------------------------
 -------------------------------------------------------------------

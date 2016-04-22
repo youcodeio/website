@@ -3,14 +3,16 @@ import { RouteParams } from 'angular2/router';
 
 import { Search } from './search';
 import { SearchService } from './search.service';
-import { TimeAgoPipe } from 'angular2-moment/TimeAgoPipe.js'; 
+import { TimeAgoPipe } from 'angular2-moment/TimeAgoPipe.js';
+import { PaginatePipe, PaginationControlsCmp, PaginationService } from 'ng2-pagination';
 
 
 @Component({
     selector: 'search',    
     templateUrl: 'app/home/search/search.component.html',
-    providers: [SearchService],
-    pipes: [TimeAgoPipe]  
+    providers: [SearchService, PaginationService],
+    directives: [PaginationControlsCmp],
+    pipes: [TimeAgoPipe,PaginatePipe]  
 })
 
 export class SearchComponent {
@@ -38,5 +40,11 @@ export class SearchComponent {
                     () => this.loading = false
             );
     }
+    
+    public config: IPaginationInstance = {
+        id: 'custom',
+        itemsPerPage: 9,
+        currentPage: 1
+    };
 
 }

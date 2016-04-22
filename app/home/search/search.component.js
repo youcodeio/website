@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './search.service', 'angular2-moment/TimeAgoPipe.js'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', './search.service', 'angular2-moment/TimeAgoPipe.js', 'ng2-pagination'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', './search.service', 'angula
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, search_service_1, TimeAgoPipe_js_1;
+    var core_1, router_1, search_service_1, TimeAgoPipe_js_1, ng2_pagination_1;
     var SearchComponent;
     return {
         setters:[
@@ -25,6 +25,9 @@ System.register(['angular2/core', 'angular2/router', './search.service', 'angula
             },
             function (TimeAgoPipe_js_1_1) {
                 TimeAgoPipe_js_1 = TimeAgoPipe_js_1_1;
+            },
+            function (ng2_pagination_1_1) {
+                ng2_pagination_1 = ng2_pagination_1_1;
             }],
         execute: function() {
             SearchComponent = (function () {
@@ -37,6 +40,11 @@ System.register(['angular2/core', 'angular2/router', './search.service', 'angula
                     //text
                     this.talks = "Talks";
                     this.tutorials = "Tutorials";
+                    this.config = {
+                        id: 'custom',
+                        itemsPerPage: 9,
+                        currentPage: 1
+                    };
                     this.query = this._routeParams.get('query').replace('alt043', '#');
                     this.type = this._routeParams.get('type');
                     this._searchService.getSearch(this.query, this.type)
@@ -46,8 +54,9 @@ System.register(['angular2/core', 'angular2/router', './search.service', 'angula
                     core_1.Component({
                         selector: 'search',
                         templateUrl: 'app/home/search/search.component.html',
-                        providers: [search_service_1.SearchService],
-                        pipes: [TimeAgoPipe_js_1.TimeAgoPipe]
+                        providers: [search_service_1.SearchService, ng2_pagination_1.PaginationService],
+                        directives: [ng2_pagination_1.PaginationControlsCmp],
+                        pipes: [TimeAgoPipe_js_1.TimeAgoPipe, ng2_pagination_1.PaginatePipe]
                     }), 
                     __metadata('design:paramtypes', [search_service_1.SearchService, router_1.RouteParams])
                 ], SearchComponent);
