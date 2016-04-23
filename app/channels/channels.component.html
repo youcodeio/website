@@ -1,0 +1,79 @@
+<div id="SoMuchChannels" class="container">
+    <!-- Page Content goes here -->
+    <div class="row">
+        <div class="col s10 m10 l10 valign-wrapper">
+            <h3 class="valign channels_title">YouCode channels</h3>
+        </div>
+        <div class="progress col S12 m12 l12" *ngIf="loading">
+            <div class="indeterminate"></div>
+        </div>
+    </div>
+    <div class="row" *ngIf="!loading">
+        <!-- cards latest published video -->
+        <div class="col s12 m8 l6 channels_lastChannelsWhoPublishedLastVideo" *ngIf="selectedChannel">
+            <div class="card channels_lastChannelsWhoPublishedLastVideo">
+                <div class="channels_lastChannel">
+                    <div class="channels_lastChannelsContentImages row">
+                        <div class="channels_lastChannelTitle red">
+                            {{selectedChannel.name}}
+                        </div>
+                        <img class="channels_lastChannelBanner" src="{{selectedChannel.bannerImageUrl}}">
+                    </div>   
+                    <!-- content : 2 last videos -->
+                    <div class="col s12 m12 l12" *ngFor="#video of video">
+                        <div class="col s3 m3 l3 waves-block waves-effect waves-light">
+                            <a class="" href="{{video.etag}}" target="_blank">
+                                <img class="channels_lastChannelVideoThumbnail z-depth-1 " src="{{video.snippet.thumbnails.high.url}}">
+                                <div class="waves-effect waves-light red z-depth-1 channels_latsChannelYoutubeButton white-text">YOUTUBE</div>
+                            </a>
+                        </div>
+                        <p class="channels_lastChannelVideoTitle col s9 m9 l9">
+                            {{video.snippet.title}}
+                            <span class="channels_lastChannelVideoDescription">
+                                {{video.snippet.description}}
+                            </span>
+                            <span class="channels_lastChannelVideoPublishedAt red-text right">
+                                {{video.snippet.publishedAt | amTimeAgo}}
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- cards -->
+        <div class="col s6 m4 l3" *ngFor="#channel of channels">
+            <div class="card channels">
+                <div class="channels_cardHover">
+                    <!-- deplacement vers la premier card -->
+                    <a class="col s12 m12 l12 channels_lastChannelIconeView waves-effect waves-light" [class.selected]="channel === selectedChannel" (click)="onSelect(channel)" >
+                        <i class="mdi-action-visibility white-text small"></i>
+                    </a>
+                    <!-- lien vers le channel -->
+                    <a target="_blank" href="https://www.youtube.com/channel/{{channel.id}}" class="col s12 m12 l12 channels_lastChannelIconePlus waves-effect waves-light">
+                        <i class="mdi-action-open-in-new white-text small "></i>
+                    </a>
+                </div>
+                <img class="channels_channelBanner" src="{{channel.bannerMobileExtraHdImageUrl}}"/>
+                <div class="channels_channelTitle red">{{channel.name}}</div>
+            </div>
+        </div>
+    </div>
+</div>  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,43 @@
+<!-- $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ -->
+<!-- $$$$$$$$$$$$$$$$ Début du header de YouCode.io $$$$$$$$$$$$$$$$$$$ -->
+<!-- $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ -->
+<div class="header_toto"></div>
+<div class="header_flou"></div>
+<div class="container header_position_search">
+    <div class="row col s12 m12 l12">  
+        <div class="col s8 m8 l4 offset-m2 offset-l4">
+            <span class="flow-text">
+                <div class="input-field">
+                    <i id="infoSearch" class="mdi-action-search prefix" [ngClass]="{active: active}"></i>
+                    <input id="icon_prefix" type="text" class="validate" [(ngModel)]="query" maxlength="50" [ngClass]="{invalid: empty}"/>
+                    <label id="labelSearch" for="icon_prefix" class="header_search" [ngClass]="{active: active}">Search</label>
+                </div> 
+            </span>
+        </div>
+        <div class="col s2 m2 l4">
+            <button class="btn-floating btn-large waves-effect waves-light red" (click)="onSearch()"><i class="mdi-action-done"></i></button>
+        </div> 
+    </div>
+
+    <div class="row col s12 m12 l12">
+        <div class="header_explain">
+            <p class="header_text_explain"> Popular Search : 
+                <a class="chip waves-effect waves-light red white-text btn" *ngFor="#topSearch of topSearch" (click)="popular(topSearch.name)">{{topSearch.name}}</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="row col s12 m12 l12">
+        <!-- Switch -->
+        <div class="switch header_choix center-align" >
+            <label>
+                <span>{{talks}}</span>
+                <input type="checkbox" [(ngModel)]="type" (click)="toggle()"/>
+                <span class="lever"></span>
+                <span>{{tutorials}}</span>
+            </label>
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>
+<!-- Handling view inclusion beetween Search.html and Welcome.html -->
