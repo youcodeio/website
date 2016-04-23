@@ -42,7 +42,7 @@ System.register(['angular2/core', 'angular2/router', './search.service', 'angula
                     this.tutorials = "Tutorials";
                     this.config = {
                         id: 'custom',
-                        itemsPerPage: 9,
+                        itemsPerPage: 6,
                         currentPage: 1
                     };
                     this.query = this._routeParams.get('query').replace('alt043', '#').replace('alt08', ' ');
