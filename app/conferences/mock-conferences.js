@@ -7,6 +7,7 @@ System.register([], function(exports_1, context_1) {
         execute: function() {
             exports_1("CONFERENCES", CONFERENCES = [
                 {
+                    "id": "1",
                     "name": "Google I/O",
                     "description": "An annual software developer-focused conference held by Google in San Francisco, California",
                     "session": [
@@ -17,6 +18,7 @@ System.register([], function(exports_1, context_1) {
                     ]
                 },
                 {
+                    "id": "2",
                     "name": "DotGo",
                     "description": "The European Go conference",
                     "session": [
@@ -31,6 +33,7 @@ System.register([], function(exports_1, context_1) {
                     ]
                 },
                 {
+                    "id": "3",
                     "name": "DotJS",
                     "description": "The European JS conference",
                     "session": [
@@ -45,6 +48,7 @@ System.register([], function(exports_1, context_1) {
                     ]
                 },
                 {
+                    "id": "4",
                     "name": "DotScale",
                     "description": "The European Tech Conference on Scalability",
                     "session": [
@@ -59,6 +63,7 @@ System.register([], function(exports_1, context_1) {
                     ]
                 },
                 {
+                    "id": "5",
                     "name": "dotRB",
                     "description": "The European Ruby conference",
                     "session": [
@@ -69,6 +74,7 @@ System.register([], function(exports_1, context_1) {
                     ]
                 },
                 {
+                    "id": "6",
                     "name": "dotCSS",
                     "description": "The largest CSS conference in Europe",
                     "session": [
@@ -83,6 +89,7 @@ System.register([], function(exports_1, context_1) {
                     ]
                 },
                 {
+                    "id": "7",
                     "name": "dotSwift",
                     "description": "The European Swift Conference",
                     "session": [
@@ -97,6 +104,7 @@ System.register([], function(exports_1, context_1) {
                     ]
                 },
                 {
+                    "id": "8",
                     "name": "FOSDEM",
                     "description": "FOSDEM is a free event for software developers to meet, share ideas and collaborate.",
                     "session": [
@@ -107,6 +115,7 @@ System.register([], function(exports_1, context_1) {
                     ]
                 },
                 {
+                    "id": "9",
                     "name": "ng-conf",
                     "description": "The World's Original Angular Conference",
                     "session": [
@@ -121,6 +130,7 @@ System.register([], function(exports_1, context_1) {
                     ]
                 },
                 {
+                    "id": "10",
                     "name": "DConf",
                     "description": "The World's Original Angular Conference",
                     "session": [
@@ -131,6 +141,7 @@ System.register([], function(exports_1, context_1) {
                     ]
                 },
                 {
+                    "id": "11",
                     "name": "Devoxx",
                     "description": "Annual European Java, Android and HTML5 conference",
                     "session": [
