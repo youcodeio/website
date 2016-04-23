@@ -221,10 +221,6 @@
     font-size: 0.8em;
     padding-right: 10px;
     padding-left: 10px;
-<<<<<<< HEAD
-=======
-    font-weight: bold;
->>>>>>> 6a646953fbb9bda02609442629b7303d0dabf36c
     text-align: center;
 }
 
@@ -246,10 +242,7 @@
 .search_cardVideoTitle{
     font-size: 0.8em;
     text-align: center;
-<<<<<<< HEAD
     font-weight: bold;
-=======
->>>>>>> 6a646953fbb9bda02609442629b7303d0dabf36c
 }
 
 
@@ -278,13 +271,9 @@
     cursor: pointer;
 }
 
-<<<<<<< HEAD
 .card .card-content {
     padding: 10px;
 }
-
-=======
->>>>>>> 6a646953fbb9bda02609442629b7303d0dabf36c
 
 /*
 -------------------------------------------------------------------
