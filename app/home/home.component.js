@@ -47,7 +47,7 @@ System.register(['angular2/core', 'angular2/router', './search/search.service', 
                 //fonction de recherche
                 HomeComponent.prototype.onSearch = function () {
                     if (this.query) {
-                        var link = ['Search', { query: this.query.replace('#', 'alt043'), type: this.type }];
+                        var link = ['Search', { query: this.query.replace('#', 'alt043').replace(' ', 'alt08'), type: this.type }];
                         this._router.navigate(link);
                         this.empty = false;
                     }

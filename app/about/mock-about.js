@@ -60,7 +60,9 @@ System.register([], function(exports_1, context_1) {
                 {
                     "name": "Quentin Le Hay",
                     "image": "../img/quentin.jpg",
-                    "description": "",
+                    "description": "Hi there! My name is Quentin and like the others I am an engineering student. " +
+                        "I really enjoy Software Engineering that's why I like to learn new technologies and features as Go and Rust. " +
+                        "I recently discover System Administration which also interest me. Enjoy your YouCode experience!",
                     "link": [
                         {
                             "title": "LinkedIn",

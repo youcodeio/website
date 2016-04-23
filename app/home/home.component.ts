@@ -58,7 +58,7 @@ export class HomeComponent implements DoCheck {
     //fonction de recherche
     onSearch() {        
         if(this.query){            
-            let link = ['Search', { query: this.query.replace('#','alt043'), type: this.type }];
+            let link = ['Search', { query: this.query.replace('#','alt043').replace(' ','alt08'), type: this.type }];
             this._router.navigate(link);
             this.empty=false;            
         } else {

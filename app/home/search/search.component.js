@@ -45,7 +45,7 @@ System.register(['angular2/core', 'angular2/router', './search.service', 'angula
                         itemsPerPage: 9,
                         currentPage: 1
                     };
-                    this.query = this._routeParams.get('query').replace('alt043', '#');
+                    this.query = this._routeParams.get('query').replace('alt043', '#').replace('alt08', ' ');
                     this.type = this._routeParams.get('type');
                     this._searchService.getSearch(this.query, this.type)
                         .subscribe(function (search) { return _this.search = search; }, function (error) { return _this.errorMessage = true; }, function () { return _this.loading = false; });

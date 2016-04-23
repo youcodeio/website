@@ -11,12 +11,8 @@ System.register([], function(exports_1, context_1) {
                     "description": "An annual software developer-focused conference held by Google in San Francisco, California",
                     "session": [
                         {
-                            "year": 2014,
+                            "year": "link",
                             "link": "https://www.google.com/events/io/io14videos"
-                        },
-                        {
-                            "year": 2013,
-                            "link": "https://developers.google.com/events/io/"
                         }
                     ]
                 },
@@ -26,7 +22,11 @@ System.register([], function(exports_1, context_1) {
                     "session": [
                         {
                             "year": 2014,
-                            "link": "#/search?query=dotGo%202014&isTuts=false"
+                            "link": "#/search/dotGoalt082014/false"
+                        },
+                        {
+                            "year": 2015,
+                            "link": "#/search/dotGoalt082015/false"
                         }
                     ]
                 },
@@ -36,7 +36,11 @@ System.register([], function(exports_1, context_1) {
                     "session": [
                         {
                             "year": 2014,
-                            "link": "#/search?query=dotJS%202014&isTuts=false"
+                            "link": "#/search/dotJSalt082014/false"
+                        },
+                        {
+                            "year": 2015,
+                            "link": "#/search/dotJSalt082015/false"
                         }
                     ]
                 },
@@ -46,11 +50,11 @@ System.register([], function(exports_1, context_1) {
                     "session": [
                         {
                             "year": 2014,
-                            "link": "#/search?query=dotScale%202014&isTuts=false"
+                            "link": "#/search/dotScalealt082014/false"
                         },
                         {
-                            "year": 2013,
-                            "link": "#/search?query=dotScale%202013&isTuts=false"
+                            "year": 2015,
+                            "link": "#/search/dotScalealt082015/false"
                         }
                     ]
                 },
@@ -60,7 +64,7 @@ System.register([], function(exports_1, context_1) {
                     "session": [
                         {
                             "year": 2013,
-                            "link": "#/search?query=dotRB%202014&isTuts=false"
+                            "link": "#/search/dotRBalt082013/false"
                         }
                     ]
                 },
@@ -70,17 +74,25 @@ System.register([], function(exports_1, context_1) {
                     "session": [
                         {
                             "year": 2014,
-                            "link": "#/search?query=dotCSS%202014&isTuts=false"
+                            "link": "#/search/dotCSSalt082014/false"
+                        },
+                        {
+                            "year": 2015,
+                            "link": "#/search/dotCSSalt082015/false"
                         }
                     ]
                 },
                 {
                     "name": "dotSwift",
-                    "description": "The largest CSS conference in Europe",
+                    "description": "The European Swift Conference",
                     "session": [
                         {
                             "year": 2015,
-                            "link": "&query=dotscale%20205"
+                            "link": "#/search/dotSwiftalt082015/false"
+                        },
+                        {
+                            "year": 2016,
+                            "link": "#/search/dotSwiftalt082016/false"
                         }
                     ]
                 },
@@ -99,12 +111,12 @@ System.register([], function(exports_1, context_1) {
                     "description": "The World's Original Angular Conference",
                     "session": [
                         {
-                            "year": 2014,
-                            "link": "#/search?query=ng-conf%202014&isTuts=false"
+                            "year": 2015,
+                            "link": "#/search/ng-confalt082015/false"
                         },
                         {
-                            "year": 2015,
-                            "link": "#/search?query=ng-conf%202015&isTuts=false"
+                            "year": 2016,
+                            "link": "#/search/ng-confalt082016/false"
                         }
                     ]
                 },
@@ -114,7 +126,7 @@ System.register([], function(exports_1, context_1) {
                     "session": [
                         {
                             "year": 2014,
-                            "link": "#/search?query=dconf%202014&isTuts=false"
+                            "link": "#/search/dconfalt082014/false"
                         }
                     ]
                 },
@@ -123,12 +135,12 @@ System.register([], function(exports_1, context_1) {
                     "description": "Annual European Java, Android and HTML5 conference",
                     "session": [
                         {
-                            "year": 2014,
-                            "link": "https://www.parleys.com/channel/devoxx-france-2014"
-                        },
-                        {
                             "year": 2013,
                             "link": "https://www.parleys.com/channel/devoxx-2013"
+                        },
+                        {
+                            "year": 2014,
+                            "link": "https://www.parleys.com/channel/devoxx-2014"
                         }
                     ]
                 }
