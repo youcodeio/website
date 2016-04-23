@@ -1,0 +1,46 @@
+<div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper red">
+            <a [routerLink]="['Home']" class="brand-logo waves-effect waves-light">
+                <img src="../img/YouCode.png" alt="Logo YouCode" class="index_youcodeLogo">
+            </a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu white-text"></i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a [routerLink]="['Home']" class="waves-effect waves-light">{{home}}</a></li>
+                <li><a [routerLink]="['About']" class="waves-effect waves-light">{{about}}</a></li>
+                <li><a [routerLink]="['Conferences']" class="waves-effect waves-light">{{conferences}}</a></li>
+                <li><a [routerLink]="['Channels']" class="waves-effect waves-light">{{channels}}</a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+                <li><a [routerLink]="['Home']" class="waves-effect waves-light">{{home}}</a></li>
+                <li><a [routerLink]="['About']" class="waves-effect waves-light">{{about}}</a></li>
+                <li><a [routerLink]="['Conferences']" class="waves-effect waves-light">{{conferences}}</a></li>
+                <li><a [routerLink]="['Channels']" class="waves-effect waves-light">{{channels}}</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<router-outlet></router-outlet>
+<!-- Footer -->
+<footer class="page-footer red">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">Youcode website</h5>
+                <p class="grey-text text-lighten-4">You can use youcode to search Talks or Tutorials and learn it.</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="https://twitter.com/you_codeio" target="_blank">Twitter <i class="mdi-action-open-in-new white-text tiny"></i></a></li>
+                    <li><a class="grey-text text-lighten-3" href="https://github.com/youcodeio" target="_blank">Github <i class="mdi-action-open-in-new white-text tiny"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2015 Copyright YouCode.io
+        </div>
+    </div>
+</footer>

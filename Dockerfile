@@ -1,5 +1,9 @@
-FROM pierrezemb/gostatic:latest
-MAINTAINER Pierre Zemb <contact@pierrezemb.fr>
+FROM node:latest
 
-# Add website
-ADD . /srv/http
+RUN mkdir /website
+ADD . /website
+WORKDIR /website
+
+RUN npm install
+
+CMD python -m SimpleHTTPServer 8080
