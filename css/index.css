@@ -199,16 +199,6 @@
     display: none;
 }
 
-/*
-.card:hover .search_cardHover{
-    -webkit-animation: slideInDown 0.4s;
-    -moz-animation: slideInDown 0.4s;
-    -o-animation: slideInDown 0.4s;
-    -ms-animation: slideInDown 0.4s;
-    visibility: visible;
-}
-*/
-
 .search_cardHoverVideoTitle{
     font-size: 1.1em;
     font-weight: 200;
@@ -428,16 +418,6 @@
     background-color: rgba(255,60,50,0.9);
 	display: none;
 }
-
-/*
-.card:hover .channels_cardHover{
-    -webkit-animation: slideInDown 0.4s;
-    -moz-animation: slideInDown 0.4s;
-    -o-animation: slideInDown 0.4s;
-    -ms-animation: slideInDown 0.4s;
-    visibility: visible;
-}
-*/
 
 .channels_channelLogo{
     height: 100%;
