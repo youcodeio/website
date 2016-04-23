@@ -221,7 +221,6 @@
     font-size: 0.8em;
     padding-right: 10px;
     padding-left: 10px;
-    font-weight: bold;
     text-align: center;
 }
 
@@ -243,6 +242,7 @@
 .search_cardVideoTitle{
     font-size: 0.8em;
     text-align: center;
+    font-weight: bold;
 }
 
 
@@ -269,6 +269,10 @@
 
 .pagination-previous{
     cursor: pointer;
+}
+
+.card .card-content {
+    padding: 10px;
 }
 
 
