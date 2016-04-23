@@ -43,7 +43,7 @@ export class SearchComponent {
     
     public config: IPaginationInstance = {
         id: 'custom',
-        itemsPerPage: 9,
+        itemsPerPage: 6,
         currentPage: 1
     };
 
