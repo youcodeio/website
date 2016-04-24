@@ -49,13 +49,22 @@
                         <iframe width="853" height="480" src="//www.youtube.com/embed/{{search.id.videoId}}" frameborder="0" allowfullscreen></iframe>
                     </div>        
                     <div class="card-content search_cardContentVideoTitle">
-                        <p class="search_cardVideoTitle">{{search.snippet.title}}</p>
-                        <p class="search_cardHoverVideoDescription">{{search.snippet.description}}</p>
+                        <p class="search_cardVideoTitle activator">{{search.snippet.title}}</p>
                     </div>
                     <div class="card-action">
-                        <p class="col s6 m6 l6 search_channelTitle">{{search.snippet.channelTitle}}</p>
-                        
+                        <p class="col s6 m6 l6 search_channelTitle">{{search.snippet.channelTitle}}</p>                        
                         <p class="col s6 m6 l6 search_channelPublishedAt">{{search.snippet.publishedAt | amTimeAgo}}</p>
+                    </div>
+                    <div class="card-reveal">
+                        <p><i class="card-title right mdi-navigation-close"></i></p>
+                        <p class="search_cardVideoTitle">{{search.snippet.title}}</p>
+                        <p class="search_cardHoverVideoDescription">{{search.snippet.description}}</p>
+                        <div class="row search_cardHoverButtonPosition">
+                            <a class="waves-effect waves-light btn white red-text right" href="https://www.youtube.com/watch?v={{search.id.videoId}}" target="_blank">
+                                <i class="mdi-hardware-keyboard-control right red-text"></i>
+                                Youtube
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
