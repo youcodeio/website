@@ -3,6 +3,19 @@
     <h1 class="about_title">CHOOSE <strong class="red-text">YOUR</strong> CONFERENCE !</h1>
 </div>
 <div class="container row">
+    <ul class="collapsible popout" data-collapsible="accordion">
+        <li *ngFor="#conference of conferences">
+            <div class="collapsible-header">{{conference.name}}</div>
+            <div class="collapsible-body">
+                <p>
+                    <span class="conferences_details">{{conference.description}}</span>
+                    <a class="badge right conferences_link btn red" *ngFor="#session of conference.session" target="_blank" href="{{session.link}}">{{session.year}}</a>
+                </p>
+
+            </div>
+        </li>
+    </ul>
+<!--
     <div class="" *ngFor="#conference of conferences">
         <hr class="col s12 l12 m12">
 
@@ -15,4 +28,5 @@
         </div>
 
     </div>
+-->
 </div>

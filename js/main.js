@@ -6,4 +6,8 @@ $( document ).ready(function(){
 //        $(this).find('.search_cardHover').slideUp("slow");
         $(this).find('.channels_cardHover').slideUp("slow");        
     });
+    $('body').on( 'mouseenter', '.collapsible', function() {
+        $('.collapsible').collapsible();
+    });
+    
 })
