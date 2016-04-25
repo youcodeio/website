@@ -4,14 +4,16 @@ import { Channels } from './channels';
 import { Video } from './video';
 import { Info } from './info';
 import { ChannelsService } from './channels.service';
-import { TimeAgoPipe } from 'angular2-moment/TimeAgoPipe.js'; 
+import { TimeAgoPipe } from 'angular2-moment/TimeAgoPipe.js';
+import { OrderBy } from "./orderBy"
 
 @Component({
     selector: 'channels',
     templateUrl: 'app/channels/channels.component.html',
     providers: [ChannelsService],
-    pipes: [TimeAgoPipe]  
+    pipes: [TimeAgoPipe, OrderBy]  
 })
+
 export class ChannelsComponent {
     channels: Channels[];
     video: Video[];
@@ -68,14 +70,9 @@ export class ChannelsComponent {
             channel.bannerImageUrl = "../../img/default_banner.jpg";
             channel.bannerMobileExtraHdImageUrl = "../../img/default_banner.jpg";
         }
-        
-        
-        
-        
-        
-        
-        
+
         channel.id = channel.info.items[0].id;
+        channel.statistics = channel.info.items[0].statistics.viewCount;
         
         this.selectFirstChannel();
     }

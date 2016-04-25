@@ -42,7 +42,7 @@
         </div>
 
         <!-- cards -->
-        <div class="col s6 m4 l3" *ngFor="#channel of channels">
+        <div class="col s6 m4 l3" *ngFor="#channel of channels | orderBy : '-statistics'">
             <div class="card channels">
                 <div class="channels_cardHover">
                     <!-- deplacement vers la premier card -->

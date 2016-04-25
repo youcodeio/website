@@ -1,4 +1,4 @@
-System.register(['angular2/core', './channels.service', 'angular2-moment/TimeAgoPipe.js'], function(exports_1, context_1) {
+System.register(['angular2/core', './channels.service', 'angular2-moment/TimeAgoPipe.js', "./orderBy"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './channels.service', 'angular2-moment/TimeAgo
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, channels_service_1, TimeAgoPipe_js_1;
+    var core_1, channels_service_1, TimeAgoPipe_js_1, orderBy_1;
     var ChannelsComponent;
     return {
         setters:[
@@ -22,6 +22,9 @@ System.register(['angular2/core', './channels.service', 'angular2-moment/TimeAgo
             },
             function (TimeAgoPipe_js_1_1) {
                 TimeAgoPipe_js_1 = TimeAgoPipe_js_1_1;
+            },
+            function (orderBy_1_1) {
+                orderBy_1 = orderBy_1_1;
             }],
         execute: function() {
             ChannelsComponent = (function () {
@@ -67,6 +70,7 @@ System.register(['angular2/core', './channels.service', 'angular2-moment/TimeAgo
                         channel.bannerMobileExtraHdImageUrl = "../../img/default_banner.jpg";
                     }
                     channel.id = channel.info.items[0].id;
+                    channel.statistics = channel.info.items[0].statistics.viewCount;
                     this.selectFirstChannel();
                 };
                 ChannelsComponent.prototype.selectFirstChannel = function () {
@@ -79,7 +83,7 @@ System.register(['angular2/core', './channels.service', 'angular2-moment/TimeAgo
                         selector: 'channels',
                         templateUrl: 'app/channels/channels.component.html',
                         providers: [channels_service_1.ChannelsService],
-                        pipes: [TimeAgoPipe_js_1.TimeAgoPipe]
+                        pipes: [TimeAgoPipe_js_1.TimeAgoPipe, orderBy_1.OrderBy]
                     }), 
                     __metadata('design:paramtypes', [channels_service_1.ChannelsService])
                 ], ChannelsComponent);

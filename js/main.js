@@ -8,6 +8,5 @@ $( document ).ready(function(){
     });
     $('body').on( 'mouseenter', '.collapsible', function() {
         $('.collapsible').collapsible();
-    });
-    
+    });    
 })
