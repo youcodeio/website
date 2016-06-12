@@ -1,5 +1,5 @@
-import { Component } from 'angular2/core';
-import { RouteParams } from 'angular2/router';
+import { Component } from '@angular/core';
+import { RouteParams } from '@angular/router-deprecated';
 
 import { Search } from './search';
 import { SearchService } from './search.service';
@@ -12,7 +12,7 @@ import { PaginatePipe, PaginationControlsCmp, PaginationService } from 'ng2-pagi
     templateUrl: 'app/home/search/search.component.html',
     providers: [SearchService, PaginationService],
     directives: [PaginationControlsCmp],
-    pipes: [TimeAgoPipe,PaginatePipe]  
+    pipes: [TimeAgoPipe,PaginatePipe]
 })
 
 export class SearchComponent {
@@ -31,7 +31,7 @@ export class SearchComponent {
         private _searchService: SearchService,
         private _routeParams: RouteParams) {
         
-        this.query = this._routeParams.get('query').replace('alt043','#').replace('alt08',' ');
+        this.query = decodeURIComponent(this._routeParams.get('query'));
             this.type = this._routeParams.get('type');
             this._searchService.getSearch(this.query,this.type)
                 .subscribe( 

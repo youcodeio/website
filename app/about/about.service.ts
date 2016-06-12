@@ -1,6 +1,6 @@
 import { About } from './about';
 import { ABOUT } from './mock-about';
-import { Injectable } from 'angular2/core';
+import { Injectable } from '@angular/core';
 
 @Injectable()
 export class AboutService {

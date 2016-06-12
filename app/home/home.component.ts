@@ -1,5 +1,5 @@
-import { Component, DoCheck } from 'angular2/core';
-import { RouteConfig, Router, ROUTER_DIRECTIVES, RouteParams } from 'angular2/router';
+import { Component, DoCheck } from '@angular/core';
+import { RouteConfig, Router, ROUTER_DIRECTIVES, RouteParams } from '@angular/router-deprecated';
 
 import { Search } from './search/search';
 import { TopSearch } from './search/topSearch';
@@ -58,7 +58,8 @@ export class HomeComponent implements DoCheck {
     //fonction de recherche
     onSearch() {        
         if(this.query){            
-            let link = ['Search', { query: this.query.replace('#','alt043').replace(' ','alt08'), type: this.type }];
+//            let link = ['Search', { query: this.query.replace('#','alt043').replace(' ','alt08'), type: this.type }];
+            let link = ['Search', { query: encodeURIComponent(this.query), type: this.type }];
             this._router.navigate(link);
             this.empty=false;            
         } else {

@@ -20,7 +20,7 @@
                         <img class="channels_lastChannelBanner" src="{{selectedChannel.bannerImageUrl}}">
                     </div>   
                     <!-- content : 2 last videos -->
-                    <div class="col s12 m12 l12" *ngFor="#video of video">
+                    <div class="col s12 m12 l12" *ngFor="let video of video">
                         <div class="col s3 m3 l3 waves-block waves-effect waves-light">
                             <a class="" href="{{video.etag}}" target="_blank">
                                 <img class="channels_lastChannelVideoThumbnail z-depth-1 " src="{{video.snippet.thumbnails.high.url}}">
@@ -42,7 +42,7 @@
         </div>
 
         <!-- cards -->
-        <div class="col s6 m4 l3" *ngFor="#channel of channels | orderBy : '-statistics'">
+        <div class="col s6 m4 l3" *ngFor="let channel of channels | orderBy : '-statistics'">
             <div class="card channels">
                 <div class="channels_cardHover">
                     <!-- deplacement vers la premier card -->

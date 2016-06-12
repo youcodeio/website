@@ -1,17 +1,8 @@
-System.register([], function(exports_1, context_1) {
-    "use strict";
-    var __moduleName = context_1 && context_1.id;
-    var About;
-    return {
-        setters:[],
-        execute: function() {
-            About = (function () {
-                function About() {
-                }
-                return About;
-            }());
-            exports_1("About", About);
-        }
+"use strict";
+var About = (function () {
+    function About() {
     }
-});
+    return About;
+}());
+exports.About = About;
 //# sourceMappingURL=about.js.map

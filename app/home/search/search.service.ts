@@ -1,8 +1,8 @@
 import { Search } from './search';
 import { TopSearch } from './topSearch';
 import { TOPSEARCH } from './mock-topSearch';
-import { Injectable } from 'angular2/core';
-import { Http } from 'angular2/http';
+import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
@@ -16,10 +16,14 @@ export class SearchService {
         .catch(this.handleError);
 	}
         
-    private handleError (error: Response) {
-        console.error(error);
-        return Observable.throw(error.json().error || 'Server error');
-    }
+    private handleError (error: any) {
+      // In a real world app, we might use a remote logging infrastructure
+      // We'd also dig deeper into the error to get a better message
+        let errMsg = (error.message) ? error.message : error.status ? `${error.status} - ${error.statusText}` : 'Server error';
+        console.error("ERROR"); 
+        console.error(errMsg); // log to console instead
+        return Observable.throw(errMsg);
+    }   
     
     getTopSearch() {
         return Promise.resolve(TOPSEARCH);

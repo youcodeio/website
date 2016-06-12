@@ -1,1 +1,1 @@
-{"version":3,"file":"mock-topSearch.js","sourceRoot":"","sources":["mock-topSearch.ts"],"names":[],"mappings":";;;QAEW,SAAS;;;;YAAT,uBAAA,SAAS,GAAgB;gBACnC;oBACC,MAAM,EAAE,QAAQ;iBAChB;gBACE;oBACF,MAAM,EAAE,WAAW;iBACnB;gBACE;oBACF,MAAM,EAAE,QAAQ;iBAChB;gBACE;oBACF,MAAM,EAAE,OAAO;iBACf;aACD,CAAA,CAAC"}
+{"version":3,"file":"mock-topSearch.js","sourceRoot":"","sources":["mock-topSearch.ts"],"names":[],"mappings":";AAEW,iBAAS,GAAgB;IACnC;QACC,MAAM,EAAE,QAAQ;KAChB;IACE;QACF,MAAM,EAAE,WAAW;KACnB;IACE;QACF,MAAM,EAAE,QAAQ;KAChB;IACE;QACF,MAAM,EAAE,OAAO;KACf;CACD,CAAC"}

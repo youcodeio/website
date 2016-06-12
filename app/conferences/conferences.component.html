@@ -4,12 +4,12 @@
 </div>
 <div class="container row">
     <ul class="collapsible popout" data-collapsible="accordion">
-        <li *ngFor="#conference of conferences">
+        <li *ngFor="let conference of conferences">
             <div class="collapsible-header">{{conference.name}}</div>
             <div class="collapsible-body">
                 <p>
                     <span class="conferences_details">{{conference.description}}</span>
-                    <a class="badge right conferences_link btn red" *ngFor="#session of conference.session" target="_blank" href="{{session.link}}">{{session.year}}</a>
+                    <a class="badge right conferences_link btn red" *ngFor="let session of conference.session" target="_blank" href="{{session.link}}">{{session.year}}</a>
                 </p>
 
             </div>

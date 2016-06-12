@@ -1,25 +1,16 @@
-System.register([], function(exports_1, context_1) {
-    "use strict";
-    var __moduleName = context_1 && context_1.id;
-    var TOPSEARCH;
-    return {
-        setters:[],
-        execute: function() {
-            exports_1("TOPSEARCH", TOPSEARCH = [
-                {
-                    "name": "HTTP/2"
-                },
-                {
-                    "name": "AngularJS"
-                },
-                {
-                    "name": "Docker"
-                },
-                {
-                    "name": "HTML5"
-                }
-            ]);
-        }
+"use strict";
+exports.TOPSEARCH = [
+    {
+        "name": "HTTP/2"
+    },
+    {
+        "name": "AngularJS"
+    },
+    {
+        "name": "Docker"
+    },
+    {
+        "name": "HTML5"
     }
-});
+];
 //# sourceMappingURL=mock-topSearch.js.map

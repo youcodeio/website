@@ -1,6 +1,6 @@
 import { Conferences } from './conferences';
 import { CONFERENCES } from './mock-conferences';
-import { Injectable } from 'angular2/core';
+import { Injectable } from '@angular/core';
 
 @Injectable()
 export class ConferencesService {

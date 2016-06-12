@@ -1,17 +1,17 @@
-import { Component } from 'angular2/core';
+import { Component } from '@angular/core';
 
 import { Channels } from './channels';
 import { Video } from './video';
 import { Info } from './info';
 import { ChannelsService } from './channels.service';
-import { TimeAgoPipe } from 'angular2-moment/TimeAgoPipe.js';
+import { TimeAgoPipe } from 'angular2-moment/TimeAgoPipe';
 import { OrderBy } from "./orderBy"
 
 @Component({
     selector: 'channels',
     templateUrl: 'app/channels/channels.component.html',
     providers: [ChannelsService],
-    pipes: [TimeAgoPipe, OrderBy]  
+    pipes: [TimeAgoPipe, OrderBy]
 })
 
 export class ChannelsComponent {

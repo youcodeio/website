@@ -14,7 +14,7 @@
         </div>
     </div>
     <div *ngIf="!loading">   
-        <div *ngIf="!search">
+        <div *ngIf="errorMessage">
             <p><i class="mdi-alert-error red-text"></i> Sorry, we can't find anything for the keyword 
                 <strong>{{query}}</strong> in 
                 <strong>
@@ -26,7 +26,7 @@
     
         <!-- Handling cards -->
         <div class="row" *ngIf="search">
-            <div class="col s12 m6 l4" *ngFor="#search of search | paginate: config">    
+            <div class="col s12 m6 l4" *ngFor="let search of search | paginate: config">    
                 <div class="card">
                     <!-- Hover cards -->
                     <div class="search_cardHover">
@@ -74,7 +74,7 @@
                         <li class="pagination-previous" [class.disabled]="p.isFirstPage()" *ngIf="p.directionLinks">
                             <a *ngIf="!p.isFirstPage()" (click)="p.previous()"><i class="mdi-navigation-chevron-left"></i></a>
                         </li>
-                        <li *ngFor="#page of p.pages" [class.active]="p.getCurrent() === page.value" class="waves-effect">
+                        <li *ngFor="let page of p.pages" [class.active]="p.getCurrent() === page.value" class="waves-effect">
                             <a (click)="p.setCurrent(page.value)">
                                 <span>{{ page.label }}</span>
                             </a>
